@@ -1,0 +1,8 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+reference/
+qa/*-full.jpg
+scripts/download-figma-assets.py
+scripts/home-assets.json
