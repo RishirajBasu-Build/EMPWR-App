@@ -75,3 +75,10 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Use 8 US fluid ounces per glass across Home, Today totals, all recent readings and helper copy. Home activity order stays Exercise, Fluid Intake, Sleep, Mood Journal after reminder creation.
 - Match the supplied reminder card, with 36 px glass icon, 12 px label, 18 px semibold title, 24 px close target, white circular 24 px previous/next controls and three 6 px dots.
 - The user explicitly requested changes to keyboard runtime behavior: clickable letter/number keys, number/letter switching, and dismissal when tapping outside a text field. Changes to src/mobile/Keyboard.tsx and its new stylesheet are authorized for those behaviors; preserve the rest of the runtime. Maintain the lock after verifying those changes.
+
+## Home reminder quick logging — October 30, 2026
+
+- Figma Home reminder 238:2874 now includes the underlined Log Progress action. Keep the reminder title's existing navigation to details, dismiss control, arrows and dots.
+- Log Progress opens the phone-scoped Fluid Intake bottom sheet from 278:7910 over dimmed Home. Include the Today glass/ounce total, shared counter, 8 US fluid ounce helper, and close control. Changes apply immediately to today's shared reading; there is no extra Save step in this design.
+- Keep the existing 0–1000 limits and decimal entry. Closing or reopening retains progress during the session; Home, details, recent readings and chart must agree.
+- Keyboard keys are outside the sheet portal. Keep the sheet open during keyboard interactions, dismiss the keyboard on outside-input taps, and close it with the sheet. Preserve runtime files.

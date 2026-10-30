@@ -81,3 +81,42 @@ final result: passed
 - TypeScript, runtime integrity, production build, and four Sites worker tests pass.
 
 final result: passed
+
+# Home reminder quick logging — October 30 revision
+
+final result: passed
+
+## Sources, state and comparison evidence
+- Source visual truth: Figma Fluid Intake Final Scope / Fluid Intake, Home reminder 238:2874 and Home Log Progress 278:7910. Saved at `qa/v3/figma-home-reminder.png` (412 × 844) and `qa/v3/figma-home-progress.png` (388 × 844).
+- Implementation: `qa/v3/home-final.jpg` and `qa/v3/progress-final.jpg`, both 393 × 852. Full-view combined evidence: `qa/v3/home-final-comparison.png` and `qa/v3/progress-final-comparison.png`. Focused header, Today pill, counter and helper: `qa/v3/progress-focused-comparison.png`.
+- Matching state: saved default reminder, Home, 5 glasses / 40oz, keyboard closed. Runtime date remains October 29, 2026 as in the existing prototype; source sample date is September 11. The Home reference is 24 px wider than the sheet reference. Both are adapted to the protected 393 px runtime without scaling fonts or controls.
+- Browser viewport 1527 × 1418 CSS px, reported DPR 1.1. Device screen measured 392.997 × 851.989 CSS px. Explicit screen clip multiplied by DPR produces the unscaled 393 × 852 capture. Reference and implementation are shown at 1:1 CSS density. Browser JPEG capture is softer than Figma PNG.
+- Additional responsive evidence: `qa/v3/pixel-progress.jpg` at the protected 427 × 952 Pixel preset; 8.5 glasses / 68oz. Android navigation remains below the sheet; all controls and helper are visible.
+
+## Findings and comparison history
+- P1 interaction finding: the simulated keyboard is a sibling of the sheet portal. Initially tapping a number also triggered modal outside dismissal. Fixed in app code by tracking keyboard pointer interactions and keeping the sheet open for those events. Retested both iPhone and Pixel: keyboard number tap changes the count while the sheet remains open; helper tap hides only the keyboard. Close, Escape and backdrop still dismiss correctly. Protected runtime is unchanged.
+- P2 responsive finding: the initial Android safe-area selector targeted a non-ancestor of the sheet portal, which would add the iOS bottom padding above Android navigation. Corrected to the platform-bearing phone ancestor, then captured `qa/v3/pixel-progress.jpg` with the intended 32 px bottom content padding.
+- Initial full comparisons: `qa/v3/home-initial-comparison.png`, `qa/v3/progress-initial-comparison.png`. After the fixes, recaptured and inspected the final combined full views and focused sheet above. No actionable P0/P1/P2 visual or interaction issues remain.
+
+## Required fidelity surfaces
+- Typography: bundled Work Sans, Home Log Progress 14/16 medium with underline and dense tracking; reminder label 12/16 medium and title 18/22 semibold. Sheet title and Today 20/24 medium, numeric totals/input 24/28 medium, helper 14/16 regular. Wrapping follows the existing phone width.
+- Spacing/layout: source 16 px sheet top radii and side gutters, 60 px header including padding/divider, 20 px section gaps, 47 px Today pill, 48 px counter, 8 px counter/helper gaps, 32 px bottom content padding plus iOS safe area. Sheet content height is 251 px plus 34 px iOS safe area, matching the source's 251 px content. Home card gains the source 8 px vertical gaps and Log Progress link.
+- Colors/tokens: 40% black scrim; white sheet, #f4f5f5 divider/pill border, #3b403e heading/count, #6e7776 muted text, existing #089b79 counter borders and #097259 action link. Disabled controls retain the shared counter state styling.
+- Image quality/assets: original Figma clock `b0767.svg` and filled glass `70a70.svg` are bundled locally, along with the source close icon and existing Home artwork. No visual asset substitutions. Device chrome, clock, cursor and camera stay template-owned.
+- Copy/content: Fluid Intake, Today, Log Progress, reminder title, and the exact 8 US fluid ounces helper match the design. Live counts are consistent with actual entered progress. The sheet has no Save button, as in the source; changes apply immediately. The explanatory description is accessible but visually hidden.
+
+## Browser and build checks
+- Home reminder Log Progress opens the sheet over Home; the original reminder title still opens details.
+- Plus/minus update the sheet total immediately; plus also works with the keyboard open and dismisses only the keyboard. Typed 8 gives 64oz; typed 8.5 gives 68oz. The Home card updates behind the sheet.
+- Typed 1001 clamps to 1000 / 8000oz and disables plus; pill scrollWidth equals clientWidth (359 px). Zero gives 0oz and disables minus.
+- On-screen numeric entry works on iPhone and Pixel, without closing the sheet. Tapping the helper dismisses the keyboard and keeps the sheet open.
+- Close control dismisses sheet and keyboard. Reopening retains the count. Escape and backdrop dismissal verified.
+- Reminder title navigation shows the same updated total, latest reading, and accessible seven-day chart values in details.
+- Both device layouts preserve protected status bar, camera, keyboard and navigation. No new horizontal overflow or hidden primary controls.
+- Browser error/warning log: none. TypeScript, mobile runtime integrity, production build and four Sites worker tests pass.
+
+## Follow-up polish and limits
+- P3: protected device chrome differs from the flat Figma frame; browser screenshot compression softens fine strokes. These do not change app control dimensions.
+- Existing prototype state remains in memory and resets on reload. Reminder scheduling remains a demonstration.
+
+final result: passed
