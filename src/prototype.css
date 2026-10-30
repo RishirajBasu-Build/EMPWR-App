@@ -16,3 +16,19 @@
 .empwr-app .info-box p{color:#0a5085;font:400 14px/20px 'Work Sans',sans-serif}
 .empwr-app .recommended{color:#535b5a;font:400 14px/16px 'Work Sans',sans-serif}
 .empwr-app .schedule-info p{color:#6e7776;font:400 16px/20px 'Work Sans',sans-serif}
+/* October 30 scope: eight US fluid ounces per glass, consistently in every state. */
+.hero-info{gap:20px}.today-total{gap:12px}.today-total>span{font-size:16px;line-height:20px}.today-total strong{font-size:24px;line-height:28px;letter-spacing:-1px;gap:4px}.today-ounces{color:#6e7776}.ounce-value{color:#7a8583}
+.counter-input,:is(.empwr-app,.bottom-sheet) .counter-button{height:48px}
+.reading-row{gap:6px}.reading-row>span:first-child{font-size:13px;letter-spacing:-.35px;gap:5px}.today-badge{padding:2px 6px}.edit-reading{gap:5px!important}
+/* Reminder card and controls measured from the supplied 760 × 228 image at 2×. */
+.reminder-carousel{margin-bottom:20px}.home-alert{border-radius:12px;padding:16px;min-height:82px;margin:0;position:relative;background:#fff}
+:is(.empwr-app,.bottom-sheet) .alert-main{gap:8px;align-items:flex-start;padding-right:0;min-width:0}.alert-main>img{width:36px;height:36px;flex:none}.alert-main>div{flex:1;min-width:0}
+.reminder-tag{font-size:12px;line-height:16px;letter-spacing:-.5px;font-weight:500;background:#ecf6fe;color:#0a5085;padding:4px 8px;border-radius:2px;margin:0 0 4px}
+.alert-main strong{font-size:18px;line-height:22px;letter-spacing:-.5px;font-weight:600;color:#535b5a;white-space:normal;padding-right:0}
+:is(.empwr-app,.bottom-sheet) .alert-dismiss{position:absolute;right:16px;top:16px;min-width:24px;width:24px;height:24px;background:#fff}
+.banner-pagination{height:24px;display:flex;gap:8px;align-items:center;justify-content:center;margin:8px 0 0}
+:is(.empwr-app,.bottom-sheet) .banner-arrow{display:grid;place-items:center;background:#fff;width:24px;height:24px;min-width:24px;border-radius:50%;padding:0}
+.banner-dots{display:flex;gap:8px;align-items:center;height:24px}.banner-dot{display:grid;place-items:center;width:6px;height:24px}.banner-dot img{display:block;width:6px;height:6px}
+@media(max-width:450px){.today-total{gap:8px}}
+.today-total[data-wide=true]{display:grid;grid-template-columns:1fr;gap:2px;height:auto;min-width:0}.today-total[data-wide=true] strong{font-size:20px;line-height:24px;justify-content:flex-end}
+:is(.empwr-app,.bottom-sheet) .edit-reading{white-space:normal;flex-wrap:wrap;row-gap:0;text-align:right;line-height:20px}.reading-row{min-height:45px}.reading-row>span:last-child:not(:first-child){text-align:right}

@@ -69,3 +69,9 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Fixed phone chrome should not animate with pushed screens. Screen content can animate; the status bar, camera cutout, and preview chrome should stay put.
 - Keep the keyboard below the home indicator/safe area layer in z-index, and above ordinary app UI while visible.
 - Keep the home indicator as the topmost safe-area layer in the z-index above everything else in the prototype.
+
+## Approved prototype updates — October 30, 2026
+
+- Use 8 US fluid ounces per glass across Home, Today totals, all recent readings and helper copy. Home activity order stays Exercise, Fluid Intake, Sleep, Mood Journal after reminder creation.
+- Match the supplied reminder card, with 36 px glass icon, 12 px label, 18 px semibold title, 24 px close target, white circular 24 px previous/next controls and three 6 px dots.
+- The user explicitly requested changes to keyboard runtime behavior: clickable letter/number keys, number/letter switching, and dismissal when tapping outside a text field. Changes to src/mobile/Keyboard.tsx and its new stylesheet are authorized for those behaviors; preserve the rest of the runtime. Maintain the lock after verifying those changes.

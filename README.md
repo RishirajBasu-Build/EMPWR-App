@@ -4,6 +4,10 @@ Interactive mobile prototype built from the Fluid Intake Final Scope page in the
 
 Includes Home, fluid intake logging (0–1000 glasses), seven-day chart, last-three-days reading editing, reminder time/date/note configuration, daily or selected-weekday repetition, schedule bottom sheet, reminder editing, and the Home reminder banner.
 
+## October 30 update
+
+Eight US fluid ounces per glass with synchronized ounce totals throughout. Home after reminder setup retains the revised activity order. Reminder banner matches the supplied image. The on-screen keyboard supports typing, text/number switching, backspace and Done, and dismisses on taps outside text fields.
+
 ## Development
 
 - `npm ci`

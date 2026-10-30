@@ -45,3 +45,39 @@ final result: passed
 - P3: runtime phone chrome differs intentionally from flat Figma frame chrome; normalized JPEG capture is softer than the original reference PNG.
 - Prototype data lives in memory. Reload restarts the demonstration; it does not schedule operating-system notifications or send real reminders.
 - The surrounding health categories are outside the Fluid Intake scope.
+
+# October 30 revision — final result: passed
+
+## Current scope and evidence
+- Updated Figma 238:1939 and supplied reminder reference `qa/v2/reminder-reference.png` (760 × 228 at 2×).
+- Full-view comparison: `qa/v2/details-comparison.png`, combining current Figma `qa/v2/figma-details.png` (392 × 848) and browser `qa/v2/details-final.jpg` (393 × 852).
+- Focused exact banner/control comparison: `qa/v2/banner-comparison.png`, combining the supplied image and browser `qa/v2/reminder-banner-final.jpg` (361 × 114), normalized to the reference's 380 × 114 CSS footprint. Width difference comes from preserving the protected 393 px runtime viewport versus Figma's 412 px Home viewport; typography, control size, and spacing retain their CSS values.
+- Full Home capture: `qa/v2/home-final.jpg`.
+- Browser layout measured 392.997 × 851.989 CSS px; viewport 1527 × 1418 CSS px, reported DPR 1.1. Screenshot clip coordinates multiplied by DPR yield an unscaled 393 × 852 output. Native clock, notch, home indicator and bezel are intentionally template-owned.
+
+## Comparison history / findings resolved
+- P1: keyboard was a static image. Added interactive keys retaining original keyboard assets, native controlled-input updates, cursor-aware editing, letter/number modes, backspace, Shift and Done. Added platform-calibrated Android hit targets and retained Android navigation chrome.
+- P1: outside clicks left keyboard open. Added document-level pointer dismissal excluding text fields and keyboard, plus blur handling that permits direct field-to-field focus.
+- P2: initial reminder-arrow implementation stretched a 6.143 × 11.143 source SVG to 24 × 24 and reversed direction. Restored its intrinsic dimensions inside the source's 24 px white circle; previous points left, next points right. Final comparison `qa/v2/banner-comparison.png` includes the corrected 13.333 px close icon within a 24 px target.
+- P2: 1000 glasses with 8000oz overflowed the Today pill by 44 px. Added a two-line summary layout for three-or-more-digit totals, verified scrollWidth equals clientWidth (353 px) at 1000.
+- Re-captured and visually checked the final banner after the last close-icon adjustment. No actionable P0/P1/P2 findings remain.
+
+## Required visual surfaces
+- Fonts: bundled Work Sans remains 400/500/600; banner label 12/16 medium, title 18/22 semibold, title tracking -0.5 px. Numeric/notes fields retain source typography.
+- Spacing: reminder 16 px padding, 8 px icon gap, 36 px glass slot, 12 px radius, 24 px circular arrows, 6 px dots with 8 px gaps. Counter buttons/field now share the revised 48 px height.
+- Colors: source blue glass and #ecf6fe / #0a5085 label, #535b5a title, white arrow buttons, gray inactive dots; original teal input tokens retained.
+- Assets: original Figma glass, close icon, intrinsic arrow SVG and dots used locally; photos and other app assets retained. New keyboard key targets overlay original device keyboard artwork; no replacement device art.
+- Copy: 8 US fluid ounces per glass applied consistently to all detail states and Home, including 5 Glasses (40oz), 15 Glasses (120oz), and zero. Home activity order remains Exercise, Fluid Intake, Sleep, Mood Journal after reminder creation. Existing demo dates and other flow copy retained.
+
+## Browser checks
+- On-screen numeric input: blank count → tap 8 → value 8 and synchronized total 8 / 64oz.
+- iPhone on-screen text and digits: empty notes → a, b, 123, 1, 2 → ab12; Backspace, ABC, c → ab1c; Done closes keyboard.
+- Outside-click dismissal verified on helper text for both iPhone and Pixel 10; keyboard remains open when typing on it.
+- Android: tap 7 enters 7 in numeric field; notes a then 3 enters a3; Done and Save Reminder Changes succeed.
+- Limits: 1001 clamps to 1000, plus disabled; zero gives 0oz and minus disabled. Large-value pill no longer overflows.
+- Create reminder, reopen and save edits, active schedule, Back to Home, updated Home activities, arrow indicator changes and close-banner action verified.
+- Existing one-reminder rule, time/date/weekday settings and last-three-reading edit restriction retained.
+- Clean-page-load console: no errors/warnings. A development-only HMR context warning occurred while replacing the keyboard module; it did not recur after a full reload and is absent from the production build.
+- TypeScript, runtime integrity, production build, and four Sites worker tests pass.
+
+final result: passed
