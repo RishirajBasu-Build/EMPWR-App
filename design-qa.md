@@ -298,3 +298,20 @@ No actionable P0/P1/P2 findings remain after the post-fix comparisons.
 - .openai/hosting.json and the three required built hosting files exist. The existing public Site identity and audience are retained.
 
 final result: passed
+
+# Four browser-review corrections — November 6, 2026
+
+final result: passed
+
+- Source: the user's four marked browser screenshots and comments. The color was read directly from Figma's base collection: VariableID:69:2715, base/color/teal/90, Mode 1, RGB rounding to #097259.
+- Today’s Progress now has margin-top 24px. Browser measurement: computed margin 24px; normalized distance below the fixed header 23.992px.
+- Pending groups now show every upcoming time ascending, followed by every overdue unlogged time ascending. A live current-minute value updates ordering while the screen is open. The exact 2 PM example (3 PM, 9 PM, 8 AM, 9 AM), unsorted input, current-minute boundary, all-past/all-future schedules and immutable stored data pass five focused domain tests.
+- Browser example at 2:35 PM shows 8 PM, 10 PM, then the unlogged 9 AM dose; the Upcoming badge remains on the earliest future group.
+- The chart foreground is read from --base-color-teal-90, shared with the percentage text. Browser computed text color is rgb(9, 114, 89); the CSS token resolves to #097259.
+- Both category bars now use the exact same labels, order and shared layout. Browser comparison reports identical geometry: toolbar 40px, category bar 43.991px, gap 26px, padding 4px 24px 0. Only aria-current / active styling differs between Medication and Fluid Intake. Both route header heights are 84px.
+- Screenshots opened and reviewed: qa/review-four/medication.jpg and qa/review-four/fluid.jpg, each 393 × 852 at the unscaled iPhone preset. Paired evidence: qa/review-four/paired-views.jpg and qa/review-four/paired-headers.jpg. These show the larger progress gap, darker source teal, corrected ordering and matching category bars.
+- Pixel check: progress margin 24px, teal rgb(9, 114, 89), header 83.991px, screen overflow 0. Fluid counter still updates 40oz → 48oz, and switching categories retains medication progress. Browser warning/error log is empty.
+- Fonts, source assets, form fields, dose check-in, fixed chrome and Fluid Intake data behavior remain intact. No new asset or device-runtime change was needed. No actionable P0/P1/P2 issue remains in these four corrections.
+- Runtime integrity passes for all 28 protected files; TypeScript/production build and all nine focused-domain/Sites-worker checks pass.
+
+final result: passed

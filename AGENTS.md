@@ -124,3 +124,10 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Preserve separate confirmation dialogs for deleting a medication and deleting its schedule. Schedule deletion retains the medication. Lists search name, type and conditions; every edit/reminder control must target its own record.
 - Begin with an empty medication list. The existing prototype menu offers Load medication example for a seven-dose, partially completed example, and Notification Settings to demonstrate permission-on/off states. These are in-memory prototype controls; no system notification permission or external reminder is requested.
 - Original Figma artwork and source SVG geometry take priority. User-uploaded imagery takes priority over type illustrations. Keep phone/device/status/keyboard runtime files protected.
+
+## Medication review corrections — November 6, 2026
+
+- Give the Today’s Progress container a 24 px top margin.
+- Pending times use two ascending groups: all remaining times at or after the current time, then all earlier unlogged times. At 2 PM, 8 AM / 9 AM / 3 PM / 9 PM display as 3 PM / 9 PM / 8 AM / 9 AM. Reevaluate the order as the current minute changes.
+- The progress ring and its teal percentage use Base `base/color/teal/90` (Figma VariableID:69:2715), resolved as #097259. Chart drawing and CSS text share the `--base-color-teal-90` token.
+- Medication and Fluid Intake use the same 84 px category header: Medication, Fluid Intake, Appointments, Steps, Calories, Exercise, Sleep, Meditation. Preserve identical spacing and geometry; only the active category differs. Reminder setup retains its separate header.
