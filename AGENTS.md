@@ -128,6 +128,7 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 ## Medication review corrections — November 6, 2026
 
 - Give the Today’s Progress container a 24 px top margin.
+- Give the empty Medication dashboard (`.med-empty-dashboard`) a 24 px top margin below the category header as well.
 - Pending times use two ascending groups: all remaining times at or after the current time, then all earlier unlogged times. At 2 PM, 8 AM / 9 AM / 3 PM / 9 PM display as 3 PM / 9 PM / 8 AM / 9 AM. Reevaluate the order as the current minute changes.
 - The progress ring and its teal percentage use Base `base/color/teal/90` (Figma VariableID:69:2715), resolved as #097259. Chart drawing and CSS text share the `--base-color-teal-90` token.
 - Medication and Fluid Intake use the same 84 px category header: Medication, Fluid Intake, Appointments, Steps, Calories, Exercise, Sleep, Meditation. Preserve identical spacing and geometry; only the active category differs. Reminder setup retains its separate header.

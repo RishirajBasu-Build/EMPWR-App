@@ -433,3 +433,7 @@ Intentional source completions: copied Fluid Intake annotation on Set Reminders 
 Checks: TypeScript and production build passed; protected runtime 28/28 files passed; 20 tests passed including Sites output/Worker contract. Browser error log: empty. Existing large-bundle advisory remains non-blocking.
 
 No remaining actionable P0/P1/P2 visual findings. Follow-up polish: none required within this scope. final result: passed
+
+## Empty Medication dashboard spacing — November 6, 2026
+
+Scoped browser annotation: add 24px top margin to `.med-dashboard.med-empty-dashboard`. Added `.med-empty-dashboard { margin-top:24px }` only; populated medication progress retains its existing rule. Preview checked with the empty list: computed margin-top is exactly 24px, with visible separation below the fixed category tabs. Evidence captured at `/private/tmp/empwr-medication-empty-spacing.jpg`; other content and actions unchanged. No actionable visual findings. final result: passed
