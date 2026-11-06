@@ -193,3 +193,76 @@
 .home-reminders .banner-arrow:disabled{opacity:1}
 .home-medication-dose-sheet .med-dose-action>.outline-button{border-color:#097259!important;color:#044e3d!important}
 .home-medication-dose-sheet .med-compact-name strong{color:#000}
+/* Appointments Final Scope / Appointments — shared gutters and protected chrome. */
+.appointments-content{padding-bottom:calc(var(--mobile-safe-area-height) + 24px)}
+.appointments-hero{padding:20px var(--page-gutter);border-bottom:2px solid #f4f5f5}
+.appointments-hero>div{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.appointments-hero h1{display:flex;align-items:center;gap:8px;color:#6e7776;white-space:nowrap}
+.empwr-app .appointments-hero .primary-button,.empwr-app .appointments-empty .primary-button{width:auto;min-height:28px;padding:4px 8px;white-space:nowrap;font-size:14px;line-height:20px}
+.empwr-app .appointment-upcoming{margin-top:12px;gap:8px;padding:8px;font-size:14px;line-height:20px;font-weight:500;letter-spacing:0}
+.appointments-list{padding:20px var(--page-gutter) 0;display:flex;flex-direction:column;gap:20px}
+.appointment-row{display:flex;align-items:flex-start;gap:16px;position:relative;padding-bottom:20px;border-bottom:1px solid #f4f5f5;min-width:0}
+.appointment-row:last-child{border-bottom:0}
+.appointment-date{width:64px;min-height:75px;flex:none;border:1px solid #dadddc;border-radius:10px;padding:4px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.appointment-date span{font-size:12px;line-height:16px;font-weight:500;letter-spacing:-.5px;color:#6e7776}
+.appointment-date strong{font:600 24px/28px 'IBM Plex Mono',monospace;letter-spacing:-1px;color:#535b5a;font-feature-settings:'zero' 1,'ss01' 1,'ss02' 1,'ss03' 1}
+.appointment-date.upcoming-date strong{color:#05612d}
+.appointment-info{display:flex;flex:1;min-width:0;flex-direction:column;gap:8px}
+.appointment-time{display:flex;align-items:center;gap:8px;min-height:16px;padding-right:48px;flex-wrap:wrap}
+.appointment-time strong{font:700 14px/17px 'Inter',sans-serif;color:#3b403e;white-space:nowrap}
+.appointment-time small{background:#e5f5f2;color:#044e3d;padding:2px 8px;border-radius:4px;font-size:11px;line-height:13px;white-space:nowrap}
+.appointment-info p{display:flex;align-items:center;gap:8px;font-size:14px;line-height:16px;letter-spacing:-.5px;color:#6e7776}
+.appointment-info p>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.appointment-info p b{color:#3b403e;font-weight:400}
+.appointment-actions{position:absolute;top:-4px;right:-2px;display:flex;gap:2px}
+.empwr-app .appointment-actions .icon-button{width:24px;min-width:24px;height:28px}
+.appointment-menu-anchor{position:relative}
+.appointment-menu{position:absolute;z-index:8;right:4px;top:28px;width:181px;border-radius:8px;background:#fff;box-shadow:0 4px 8px #00000026;padding:8px 0;overflow:hidden}
+.appointment-menu-above{top:auto;bottom:28px}
+.empwr-app .appointment-menu button{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:8px 12px;font-size:14px;line-height:16px;letter-spacing:-.5px;color:#353535;text-align:left}
+.appointment-menu button+button{border-top:1px solid #eaebeb}
+.appointments-empty{display:flex;align-items:center;flex-direction:column;gap:16px;padding:36px var(--page-gutter) 16px}
+.empwr-app .appointments-empty h2{font-size:18px;line-height:22px;color:#3b403e;text-align:center}
+.appointment-form-header{height:61px;background:#fff;border-bottom:1px solid #eaebeb}
+.appointment-form-header .med-titlebar{height:61px;position:relative;display:flex;align-items:center;justify-content:center;padding:0 var(--page-gutter)}
+.appointment-form-header h1{font-size:20px;line-height:24px;font-weight:500;letter-spacing:-.5px}
+.appointment-form-header .icon-button{position:absolute;left:var(--page-gutter);top:10px;justify-content:flex-start}
+.appointment-form{padding:24px var(--page-gutter) calc(var(--flow-footer-height) + var(--mobile-safe-area-height) + 24px)}
+.empwr-app .appointment-form>h2{font-size:28px;line-height:32px;letter-spacing:-1px;font-weight:600;color:#3b403e;margin-bottom:24px}
+.appointment-fields{display:flex;flex-direction:column;gap:24px}
+.appointment-field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.appointment-field>label{font-size:16px;line-height:20px;font-weight:500;letter-spacing:-.5px;color:#535b5a}
+.appointment-field>label>span{color:#f37968}
+.empwr-app .appointment-text{display:block;box-sizing:border-box;width:100%;height:36px;min-width:0;border:1.5px solid #dadddc;border-radius:8px;padding:7px 12px;background:#fff;color:#535b5a;font:400 16px/20px 'Work Sans',sans-serif;letter-spacing:.1px}
+.empwr-app .appointment-location{resize:none;min-height:36px;field-sizing:content;height:auto;max-height:116px;overflow:auto}
+.appointment-text::placeholder{color:#8d9796}
+.appointment-time-input{display:flex;align-items:center;gap:8px;width:100%;min-width:0}
+.appointment-time-input>div{display:flex;align-items:center;gap:8px;flex:1;min-width:0;height:36px;border:1.5px solid #dadddc;border-radius:8px;padding:4px 12px;background:#fff}
+.appointment-time-input input{display:block;min-width:0;width:26px;height:24px;padding:0;border:0;border-radius:2px;background:#fff;font:500 20px/24px 'Work Sans',sans-serif;letter-spacing:-.5px;color:#3b403e}
+.appointment-time-input>div>span:not(.med-asset){font-size:20px;line-height:24px}
+.appointment-time-input>div>.med-asset{margin-left:auto}
+.appointment-time-input .appointment-period{flex:none;position:relative;gap:0;width:88px;padding:0}
+.appointment-period select{appearance:none;border:0;border-radius:8px;background:transparent;width:100%;height:100%;padding:0 30px 0 12px;color:#535b5a;font:400 16px/20px 'Work Sans',sans-serif;cursor:pointer}
+.appointment-period>.med-asset{pointer-events:none;position:absolute;right:6px;top:4.5px;transform:rotate(90deg)}
+.empwr-app .appointment-date-field{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;height:36px;border:1px solid #dadddc;border-radius:8px;padding:4px 12px;background:#fff;text-align:left;font:400 14px/20px 'IBM Plex Mono',monospace;color:#535b5a}
+.appointment-reminders{border:1px solid #eaebeb;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:12px}
+.appointment-reminders h3{font-size:20px;line-height:24px;letter-spacing:-.5px;font-weight:500;color:#6e7776;margin:0;padding:0 0 12px;border-bottom:1px solid #eaebeb}
+.empwr-app .appointment-reminders>.outline-button{color:#097259;border-color:#00ad84;gap:4px}
+.appointment-reminder-row{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:52px}
+.appointment-reminder-row+.appointment-reminder-row{padding-top:12px;border-top:1px solid #eaebeb}
+.empwr-app .appointment-reminder-edit{display:flex;min-width:0;flex:1;flex-direction:column;gap:4px;text-align:left}
+.appointment-reminder-edit strong,.appointment-reminder-edit>span{display:flex;align-items:center;gap:4px}
+.appointment-reminder-edit strong{font-size:20px;line-height:24px;font-weight:500;color:#000;letter-spacing:-.5px}
+.appointment-reminder-edit>span{font-size:14px;line-height:20px;color:#6e7776;letter-spacing:-.5px}
+.appointment-toggle{display:flex;flex:none;align-items:center;justify-content:center;min-height:44px}
+.empwr-app .appointment-type{display:flex;align-items:center;justify-content:space-between;text-align:left}
+.appointment-type>.med-asset{transform:rotate(90deg)}
+.appointment-reminder-times{display:flex;flex-direction:column;gap:8px}
+.empwr-app .appointment-reminder-form>h2{margin-bottom:16px}
+.appointment-reminder-form .appointment-fields{gap:16px}
+.empwr-app .appointment-reminder-times>.outline-button{color:#6e7776;gap:4px}
+.appointment-confirm{font-feature-settings:'zero' 1,'ss03' 1,'ss06' 1,'ss01' 1,'ss04' 1}
+.device-screen:has(.appointment-confirm) .status-bar{background:#999}
+.device-screen:has(.appointment-form-header) .status-bar{background:#fff}
+.device-screen:has(.appointment-form-header) .flow-fixed-header:has([data-scrolled=true]){box-shadow:0 3px 8px #0000000d}
+@media(max-width:380px){.appointments-hero h1{font-size:18px}.appointment-row{gap:12px}}

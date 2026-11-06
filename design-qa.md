@@ -401,3 +401,35 @@ final result: passed
 - Production/TypeScript, 28 protected runtime files and all 15 regression checks pass before publishing.
 
 final result: passed
+
+## Appointments integration — November 6, 2026
+
+Source visual truth: `qa/appointments/reference-348-19965.png`, `reference-357-23695.png`, `reference-357-22770.png`, `reference-348-19741.png`, `reference-357-23192.png`, `reference-357-22979.png`. High-fidelity generated context is retained beside them as source text. Source frames are 388×938 CSS px; Figma renders include their border (392×942 px).
+
+Implementation: `qa/appointments/iphone-empty-final.jpg`, `iphone-form-final.jpg`, `iphone-reminder-final.jpg`, `iphone-list-final.jpg`, `list-menu-final.jpg`, `delete-dialog.jpg`, `form-reminders.jpg`; Pixel evidence `pixel-list.jpg`, `pixel-empty-final.jpg`, `pixel-form-final.jpg`, `pixel-reminder-final.jpg`.
+
+Browser viewport 1680×1560; verified device-screen bounding boxes approximately 393×852 CSS px (iPhone) and 427×952 CSS px (Pixel). Captures are 393×852 and 427×952 pixels respectively, normalized by the screenshot API after applying reported device density 1.1. No comparison uses the surrounding desktop stage. The source's taller viewport and older status/home chrome remain intentional differences: protected device runtime and safe areas are preserved. Source sample dates are replaced by current client-date defaults and future demonstration records.
+
+Full-view comparisons opened and reviewed: `iphone-empty-final-comparison.jpg`, `iphone-form-final-comparison.jpg`, `iphone-reminder-final-comparison.jpg`, `list-menu-final-comparison.jpg`. Focused controls comparison opened: `iphone-reminder-final-detail.jpg`. All reside in `qa/appointments/`.
+
+Findings and correction history:
+- P2: initial empty-state message used 20px/24px with 20px gaps. Corrected to source 18px/22px and 16px gaps. Post-fix evidence: iphone-empty-final-comparison.jpg.
+- P2: reminder form inherited 24px gaps from appointment details. Corrected its heading margin and field gaps to source 16px. Post-fix evidence: iphone-reminder-final-comparison.jpg and detail.jpg.
+- P2: appointment time rows inherited Work Sans. Loaded the source Inter Bold font; date badges use source IBM Plex Mono 600. Post-fix evidence: list-menu-final-comparison.jpg. Work Sans remains the semantic UI family.
+- Initial reminder screenshot caught an in-progress push transition and is not used for final acceptance. Recaptured settled final screen.
+- Final logic review corrected reminder merging so adding times while editing one reminder creates distinct IDs, preserves other dates/toggles, and blocks duplicate occurrences. Five appointment logic tests cover defaults, date/time sorting, upcoming selection, required fields and merge identity/isolation.
+
+Required fidelity surfaces:
+- Typography: Work Sans hierarchy (28px/32px headings, 16px/20px labels and values), Inter Bold 14px list times, IBM Plex Mono 24px date badges and 14px dates checked. Shared category typography stays identical to Medication/Fluid Intake per the user's standing feedback.
+- Spacing/layout: 16px common gutters supersede original 12/20/24px gutters; 36px form fields, 8px field internals, 24px appointment field gaps and 16px reminder gaps checked. iPhone long reminder lists scroll beneath opaque fixed header/footer; Pixel preserves Android navigation area. No clipped persistent controls.
+- Tokens: teal/90 #097259 save actions, source grey borders, blue upcoming banner, green upcoming date, coral required marks and destructive red confirmed.
+- Assets: 21 original non-empty SVG files cataloged in asset-manifest.json, including conditional toggle and date assets. Source files are unmodified. Intrinsic root geometry is preserved in slots; rotation is limited to source chevron orientation. rendered-assets.json confirms all 17 populated-list images loaded at intended dimensions. Reminder input/calendar/add assets were separately measured loaded at source geometry. No substituted artwork or temporary asset URLs in application code.
+- Copy/content: source headings, fields, empty state and deletion copy retained. Appointment With is the chosen consistent field label (one alternate Figma frame says Provider name). Dynamic counts, dates, times and reminder banner use shared state.
+
+Interaction verification: Home, menu and category entry; empty-state validation; provider and location entry; keyboard dismissal outside fields; AM/PM selection; minute 60 normalized to next hour; calendar selection; defaults two hours before and at appointment time on its date; add reminders; duplicate blocking; edited date persistence; independent toggles; exact row editing preserving other reminders; direct list reminder save; cancel/confirm delete with sibling preservation; Home count updates; Medication and Fluid Intake category navigation; Fluid counter 40→48oz reflected on Home. Pixel form, reminder and list states checked. Existing combined Home reminders remain unchanged.
+
+Intentional source completions: copied Fluid Intake annotation on Set Reminders resolves to Appointment Reminder as shown by adjacent screens; a fixed Save Reminders action follows the existing app save pattern because the source omits a commit control. No external notification scheduling was added. Appointments start empty; menu example loads three future records. Data remains in memory as before.
+
+Checks: TypeScript and production build passed; protected runtime 28/28 files passed; 20 tests passed including Sites output/Worker contract. Browser error log: empty. Existing large-bundle advisory remains non-blocking.
+
+No remaining actionable P0/P1/P2 visual findings. Follow-up polish: none required within this scope. final result: passed

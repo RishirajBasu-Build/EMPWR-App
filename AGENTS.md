@@ -157,3 +157,13 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 
 - Latest browser feedback supersedes the medication reminder description: remove the `You have N medications due now...` sentence.
 - All Home alert cards share one height so changing carousel selection cannot move the content below. Default compact height is 110 px; if real content needs more room, measure the tallest card's copy and use that common height for every card. Do not resize the window based on the selected slide or animate its height between categories.
+
+## Appointments Final Scope — November 6, 2026
+
+- Integrate Figma BMI80ChX15L7QaJ38rReU2 / Appointments Final Scope (315:3972) / Appointments (348:19740) through the Home card, menu and shared category tabs. Preserve Medication, Fluid Intake and all protected runtime files.
+- Use the empty state, chronological appointment rows, Add/Edit details, per-appointment action menu and deletion confirmation from the seven supplied screens. Home's appointment count uses the shared appointment store.
+- Provider is required text; location is optional keyboard-aware textarea. Time has directly editable hour (0–12) and minute (0–60) segments plus AM/PM. Normalize a 60-minute boundary to the next hour; dates use the shared phone-scoped calendar.
+- Appointment reminders default to two hours before and at the appointment time, on the appointment date. The explicit same-date annotation takes precedence at midnight: the earlier clock wraps on that date. Users may change the date, add more times, edit one reminder and toggle each separately. Preserve identities, independent dates and toggle values when editing; reject duplicate date/time occurrences.
+- The copied annotation mentioning Fluid Intake on the appointment Set Reminders control is interpreted as Appointment Reminder, following the adjacent Reminder Details screen. Use the app's existing fixed Save pattern to commit that screen, whose source has no return/commit control. Back cancels uncommitted reminder changes.
+- Original Appointments SVGs stay unmodified at intrinsic dimensions in source slots. Use source Work Sans, IBM Plex Mono and Inter Bold appointment times. Keep the current 16 px shared gutter and fixed scroll chrome.
+- Appointments start empty. Load appointments example in the Home menu demonstrates three chronologically ordered future appointments and their reminders. Restart prototype clears appointments along with the other flows. This remains an in-memory prototype; it does not schedule external notifications.
