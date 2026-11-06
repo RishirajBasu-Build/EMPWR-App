@@ -488,3 +488,17 @@ Intentional differences: protected live device/status/navigation chrome; current
 Passing evidence: defaults-passed-comparison.png, custom-passed-comparison.png, reminder-form-comparison.png, iphone-defaults-passed.png, iphone-custom-passed.png and pixel-custom-passed.png. Browser interaction and asset geometry checks passed; console errors were empty. Automated validation completed during publication packaging.
 
 final result: passed
+
+## Medication free-text fields — November 6, 2026
+
+Target: current published Medication wizard, with the user's four explicit changes as the source of truth. No new design or Figma change was requested. Scope: strength/dosage entry, strength label/helper, validation and round-trip display.
+
+Evidence: qa/medication-text-inputs contains the prior published form, optional-strength and mixed-character strength/dosage captures, and the Pixel optional-strength form. The reference was captured at214.36×464.73 and normalized to393×852 for a structural before/after comparison; it is not used for pixel-level typography judgments. Updated captures are393×852 iPhone and427×952 Pixel at scale1. strength-comparison.png combines reference and implementation; the visible helper/required-marker removal and resulting natural spacing shift match the request.
+
+Required fidelity surfaces: typography, source fonts, colors, assets, borders, field sizes,16px gutters and fixed chrome are unchanged. Only the requested helper and strength asterisk disappear; later fields shift upward by the removed helper's natural height. Original upload/camera/type icons remain unchanged. Both phone layouts fit without overlaps. Copy is unchanged elsewhere. The dosage supporting text and required marker remain as before. No new imagery or styling was introduced.
+
+Behavior verified through the UI: strength accepts `500 mg/mL + B12 (10%)`, retains it across back/forward and save/reopen; strength may be blank through the full save. Dosage accepts and saves `½ tablet + water (5 mL)` and retains it when editing. Whitespace-only dosage blocks continuation; valid free text enables it once the numeric frequency and time requirements are met. Blank strength shows no standalone mg on review or the medication list. Mixed-character strength/dose display without appended duplicate units. Console errors: none. Protected runtime integrity:28 files unchanged. Build and existing regression checks run during packaging.
+
+No new automated tests were added for this scoped reversible form edit; end-to-end browser round trips verify the requested behavior directly.
+
+final result: passed

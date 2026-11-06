@@ -19,3 +19,7 @@ Source: EMPWR / Medication Final Scope / Medication handoff (326:13585), 31 fram
 ## Verification gate
 
 Exercise creation/validation, date and weekday changes, review/edit, saved data, pending/taken check-in, search, menu and both delete confirmations; compare rendered source states and preserve Fluid Intake regression checks on iPhone and Pixel. Run runtime integrity, TypeScript/build and Sites checks, then publish to the existing public Site under standing authorization.
+
+## Free-text strength and dosage — November 6, 2026
+
+The latest user request supersedes the earlier required/numeric strength and positive numeric dose constraints. Strength is optional, has no required marker or mg helper, and uses a text keyboard. Strength and usual amount per dose accept letters, numbers and special characters without filtering. Dosage remains required nonblank text; frequency and distinct-time rules are unchanged. Values survive review/save/edit; blank strength renders no bare unit, and mixed-character entries are displayed without duplicate unit/type suffixes. Legacy numeric examples retain their current formatting.

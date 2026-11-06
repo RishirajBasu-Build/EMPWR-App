@@ -187,3 +187,9 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - New appointments immediately contain enabled reminders two hours before and at the appointment time. Untouched defaults follow appointment time/date changes; custom reminders retain their independent dates, times, identities and switch values.
 - Keep Set Reminders available after reminders exist. It opens the source two-time form with the saved values; Add Reminders appends another time. Individual time/date rows edit only their occurrence. Back cancels uncommitted changes. The shared Reminders hub and upcoming appointment banner read the same records.
 - The updated on-switch export is isolated at assets/figma/appointment-reminder/33b4d.svg because its paint differs from the older export with the same filename. Preserve other flows' existing source assets.
+
+## Medication free-text inputs — November 6, 2026
+
+- Latest user request supersedes the Medication Handoff's numeric/required strength and numeric dose rules. Medication Strength is optional, uses a text keyboard, accepts numbers/letters/special characters and has no mg helper text or required marker.
+- Usual amount per dose is required nonblank free text, using the text keyboard and accepting numbers/letters/special characters. Keep numeric frequency and unique scheduled-time validation unchanged.
+- Preserve entered strength/dosage text through review, save and edit. Empty strength displays no standalone unit. Existing numeric example values retain their current unit/type formatting; free text is displayed verbatim without appending a duplicate unit/type.
