@@ -391,3 +391,13 @@ final result: passed
 - P3: dates, progress data, responsive card width and device/status rendering intentionally follow the current prototype/runtime rather than the historical source mock. Long-lived cross-midnight prototype records retain the existing session-date limitation until reload; no persistence or external notifications were added.
 
 final result: passed
+
+# Equal-height Home alerts — November 6, 2026
+
+- Source: latest user browser annotation removes the medication count description and requires equal card heights across alert types. This supersedes the earlier two banner heights in the Figma handoff.
+- Removed that sentence, matched the medication title/action spacing to the fluid card and applied one shared height to all slides. The shared height is derived from the tallest content with a 110 px minimum, retaining space for longer reminder titles. Selection no longer changes height and there is no height transition.
+- Browser evidence: qa/equal-reminders/iphone-medication.jpg, pixel-fluid.jpg and measurements.json. At the unscaled iPhone and Pixel presets, both cards and the window measure 110 px, with no vertical overflow. The Recommended Activities heading stays at exactly the same top position before and after switching: 659.020 px on iPhone and 619.034 px on Pixel in the QA viewport. No layout shift remains.
+- Typography, original icons, 16 px gutters, card padding and actions are preserved. Medication action opens five due entries; fluid action opens the existing 40oz quick-log sheet. Browser error log is empty. No actionable P0/P1/P2 issue remains.
+- Production/TypeScript, 28 protected runtime files and all 15 regression checks pass before publishing.
+
+final result: passed

@@ -1,0 +1,126 @@
+{
+  "iphone": {
+    "medication": [
+      {
+        "class": "home-reminder-window",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "home-reminder-slide home-reminder-medication",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "home-reminder-slide home-reminder-fluid",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "recommended",
+        "client": 16,
+        "height": 15.994318008422852,
+        "scroll": 16,
+        "top": 659.0198364257812
+      }
+    ],
+    "fluid": [
+      {
+        "class": "home-reminder-window",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "home-reminder-slide home-reminder-medication",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "home-reminder-slide home-reminder-fluid",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 497.0312194824219
+      },
+      {
+        "class": "recommended",
+        "client": 16,
+        "height": 15.994318008422852,
+        "scroll": 16,
+        "top": 659.0198364257812
+      }
+    ]
+  },
+  "pixel": {
+    "medication": [
+      {
+        "class": "home-reminder-window",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "home-reminder-slide home-reminder-medication",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "home-reminder-slide home-reminder-fluid",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "recommended",
+        "client": 16,
+        "height": 15.994318008422852,
+        "scroll": 16,
+        "top": 619.0340576171875
+      }
+    ],
+    "fluid": [
+      {
+        "class": "home-reminder-window",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "home-reminder-slide home-reminder-medication",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "home-reminder-slide home-reminder-fluid",
+        "client": 110,
+        "height": 109.99999237060548,
+        "scroll": 110,
+        "top": 457.0454406738281
+      },
+      {
+        "class": "recommended",
+        "client": 16,
+        "height": 15.994318008422852,
+        "scroll": 16,
+        "top": 619.0340576171875
+      }
+    ]
+  }
+}

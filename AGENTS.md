@@ -152,3 +152,8 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Fluid Intake retains the configured reminder title and its existing immediate-save Log Progress sheet. Keep 8 ounces per glass, keyboard behavior and all detail/chart data synchronization.
 - Match source Work Sans features, original 32 px violet capsule / 36 px blue glass, source close/arrows/dots and the Home medication sheet's compact rows. Use the protected Carousel for gestures. Clip the track's vertical overflow without making it a new scroll container; observe drag completion to settle paused swipes.
 - The prototype menu offers Load combined reminder example: five due 9 AM capsule entries and seven total daily doses, plus a daily fluid reminder. Before 9 AM the example uses the current minute so it remains demonstrable. Restart clears this demonstration. Existing empty-state defaults and Load medication example remain available.
+
+## Equal-height alert cards — November 6, 2026
+
+- Latest browser feedback supersedes the medication reminder description: remove the `You have N medications due now...` sentence.
+- All Home alert cards share one height so changing carousel selection cannot move the content below. Default compact height is 110 px; if real content needs more room, measure the tallest card's copy and use that common height for every card. Do not resize the window based on the selected slide or animate its height between categories.

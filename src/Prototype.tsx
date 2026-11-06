@@ -70,7 +70,7 @@ function HomeReminders(){
  const store=useStore(),meds=useMedications(),flow=useFlow();
  const [clock,setClock]=useState(homeReminderClock),[dismissed,setDismissed]=useState<Record<string,boolean>>({});
  const [fluidOpen,setFluidOpen]=useState(false),[medicationGroup,setMedicationGroup]=useState<MedicationDoseGroup|null>(null);
- const [activeId,setActiveId]=useState(''),[cardWidth,setCardWidth]=useState(361),[cardHeight,setCardHeight]=useState(150);
+ const [activeId,setActiveId]=useState(''),[cardWidth,setCardWidth]=useState(361),[cardHeight,setCardHeight]=useState(110);
  const wrapper=useRef<HTMLDivElement>(null),activeIdRef=useRef('');
  useEffect(()=>{const timer=window.setInterval(()=>{const next=homeReminderClock();setClock(old=>old.date===next.date&&old.time===next.time?old:next);},1000);return()=>window.clearInterval(timer);},[]);
  const doses=scheduledDoses(meds.medications,clock.date).filter(d=>!dismissed[`medication:${clock.date}:${d.time}`]);
@@ -84,12 +84,12 @@ function HomeReminders(){
   if(!host||!rail)return;
   const ids=Array.from(host.querySelectorAll<HTMLElement>('.home-reminder-slide')).map(e=>e.dataset.reminderId!);
   let timer=0;
-  const update=()=>{const index=Math.max(0,Math.min(ids.length-1,Math.round(rail.scrollLeft/Math.max(1,rail.clientWidth))));const slide=host.querySelectorAll<HTMLElement>('.home-reminder-slide')[index];if(slide){activeIdRef.current=ids[index];setActiveId(ids[index]);setCardHeight(slide.offsetHeight);}};
+  const update=()=>{const index=Math.max(0,Math.min(ids.length-1,Math.round(rail.scrollLeft/Math.max(1,rail.clientWidth))));const slide=host.querySelectorAll<HTMLElement>('.home-reminder-slide')[index];if(slide){activeIdRef.current=ids[index];setActiveId(ids[index]);}const copies=host.querySelectorAll<HTMLElement>('.home-reminder-copy');setCardHeight(Math.max(110,...Array.from(copies,e=>e.scrollHeight+32)));};
   const align=()=>{setCardWidth(rail.clientWidth);const index=Math.max(0,ids.indexOf(activeIdRef.current));rail.scrollTo({left:index*rail.clientWidth,behavior:'instant'});update();};
   const settle=()=>{window.clearTimeout(timer);timer=window.setTimeout(()=>{if(rail.dataset.dragging==='true')return;const index=Math.round(rail.scrollLeft/Math.max(1,rail.clientWidth));if(Math.abs(rail.scrollLeft-index*rail.clientWidth)>1)rail.scrollTo({left:index*rail.clientWidth,behavior:'smooth'});},140);};
   const onScroll=()=>{update();settle();};
   const gestureObserver=new MutationObserver(()=>{if(rail.dataset.dragging!=='true')settle();});gestureObserver.observe(rail,{attributes:true,attributeFilter:['data-dragging']});
-  const observer=new ResizeObserver(()=>{setCardWidth(rail.clientWidth);update();});observer.observe(rail);host.querySelectorAll('.home-reminder-slide').forEach(e=>observer.observe(e));
+  const observer=new ResizeObserver(()=>{setCardWidth(rail.clientWidth);update();});observer.observe(rail);host.querySelectorAll('.home-reminder-copy').forEach(e=>observer.observe(e));
   rail.addEventListener('scroll',onScroll,{passive:true});align();
   return()=>{observer.disconnect();gestureObserver.disconnect();rail.removeEventListener('scroll',onScroll);window.clearTimeout(timer);};
  },[slideKey]);
@@ -105,7 +105,7 @@ function HomeReminders(){
       <div className="home-reminder-copy">
        <div className="home-reminder-main">
         <div className="home-reminder-heading"><span className="reminder-tag">{slide.kind==='medication'?'Medication Reminder':'Fluid Intake Reminder'}</span><button className="home-reminder-dismiss" aria-label={slide.kind==='medication'?'Dismiss medication reminder':'Dismiss fluid intake reminder'} onClick={()=>setDismissed(old=>({...old,[slide.id]:true}))}><img src={A+'f17c9.svg'} width="13.3333" height="13.3333" alt=""/></button></div>
-        {slide.kind==='medication'?<><strong>Your {timeLabel(medication!.time)} dose is due</strong><p>You have {medication!.doses.length} {medication!.doses.length===1?'medication':'medications'} due now as per your daily schedule.</p></>:<button className="home-reminder-fluid-title" aria-label="Open Fluid Intake reminder" onClick={()=>flow.push(detailsScreen)}><strong>{store.reminder!.note}</strong></button>}
+        {slide.kind==='medication'?<strong>Your {timeLabel(medication!.time)} dose is due</strong>:<button className="home-reminder-fluid-title" aria-label="Open Fluid Intake reminder" onClick={()=>flow.push(detailsScreen)}><strong>{store.reminder!.note}</strong></button>}
        </div>
        {slide.kind==='medication'?<button className="log-progress-link" onClick={()=>setMedicationGroup({time:medication!.time,date:clock.date,mode:'pending',doseKeys:medication!.doses.map(d=>d.key),home:true})}>View Medication Details</button>:<button className="log-progress-link" onClick={()=>setFluidOpen(true)}>Log Progress</button>}
       </div>
