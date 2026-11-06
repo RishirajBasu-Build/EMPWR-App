@@ -267,3 +267,94 @@
 .device-screen:has(.appointment-form-header) .status-bar{background:#fff}
 .device-screen:has(.appointment-form-header) .flow-fixed-header:has([data-scrolled=true]){box-shadow:0 3px 8px #0000000d}
 @media(max-width:380px){.appointments-hero h1{font-size:18px}.appointment-row{gap:12px}}
+/* Reminders Final Scope: shared list, type picker and schedule setup. */
+.reminders-header{background:#fff;height:61px;border-bottom:1px solid #eaebeb}
+.reminders-hub-header{height:84px}
+.reminders-titlebar{position:relative;height:61px;display:flex;align-items:center;justify-content:center;padding:0 var(--page-gutter)}
+.reminders-titlebar>.icon-button{position:absolute;left:var(--page-gutter);justify-content:flex-start}
+.reminders-hub-header .reminders-titlebar{height:44px}
+.reminder-category-tabs{height:40px}
+.reminder-category-track{padding:0 var(--page-gutter);gap:25px;align-items:center}
+.empwr-app .reminder-category-track>button{font:500 15px/18px 'Work Sans',sans-serif;white-space:nowrap;color:#b0b5b5;padding:8px 0}
+.empwr-app .reminder-category-track>button.active{color:#106b70;border-bottom:2px solid #106b70}
+.reminder-picker-content,.reminder-form-content{padding:24px var(--page-gutter) calc(var(--flow-footer-height,0px) + var(--mobile-safe-area-height) + 24px)}
+.empwr-app :is(.reminder-picker-content,.reminder-form-content)>h2{font:600 28px/32px 'Work Sans',sans-serif;letter-spacing:-1px;color:#3b403e;margin-bottom:24px}
+.reminder-type-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.empwr-app .reminder-type-tile{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding:0 0 20px;border:1px solid #dadddc;border-radius:8px;overflow:hidden;background:#fff}
+.reminder-type-tile>span{display:flex;align-items:center;justify-content:center;height:68px;flex:none;background:#7116e9}
+.reminder-type-tile.reminder-kind-fluid>span{background:#168de8}.reminder-type-tile.reminder-kind-appointment>span{background:#e9168e}.reminder-type-tile.reminder-kind-general>span{background:#078e44}
+.reminder-type-tile>strong{font-size:18px;line-height:22px;font-weight:500;color:#535b5a;letter-spacing:-.5px}
+.reminders-list-content{display:flex;flex-direction:column;gap:16px;padding:20px var(--page-gutter) calc(var(--flow-footer-height) + var(--mobile-safe-area-height) + 24px)}
+.hub-reminder-card{border:1.5px solid #eaebeb;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.hub-card-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.empwr-app .hub-edit{display:flex;align-items:center;gap:12px;text-align:left;min-width:0;flex-wrap:wrap}
+.hub-edit>strong{font-size:20px;line-height:24px;font-weight:500;letter-spacing:-.5px;color:#535b5a;white-space:nowrap}
+.hub-kind{display:flex;gap:6px;align-items:center;padding:4px 10px 4px 8px;background:#eaf6fd;border-radius:4px;font-size:14px;line-height:16px;font-weight:500;color:#0a5085;white-space:nowrap}
+.reminder-kind-medication .hub-kind{color:#440b8e;background:#f4ecfe}.reminder-kind-appointment .hub-kind{color:#8e0b53;background:#feecf6}.reminder-kind-general .hub-kind{color:#044e3d;background:#e8fff1}
+.hub-card-heading>button[role=switch]{flex:none;display:flex;align-items:center;min-height:24px}
+.hub-repeat,.hub-dates,.hub-appointment-date,.hub-appointment-meta{display:flex;align-items:center;gap:8px;font-size:14px;line-height:20px;letter-spacing:-.5px;color:#535b5a}
+.hub-repeat{font-weight:500;align-items:flex-start}.hub-repeat>.med-asset{margin-top:2px}
+.hub-dates{gap:12px;font-size:14px;font-weight:500;color:#6e7776}
+.hub-dates>span{display:flex;gap:2px;align-items:center}
+.hub-medication{display:flex;align-items:center;gap:4px;color:#000;font-size:16px;line-height:20px}.hub-medication small{color:#6e7776;font-family:'IBM Plex Mono',monospace;font-size:14px}
+.hub-appointment-date{font-weight:500;gap:2px;color:#3b403e}.hub-appointment-meta{flex-wrap:wrap;gap:4px 12px}.hub-appointment-meta>span{display:flex;align-items:center;gap:8px;min-width:0;overflow-wrap:anywhere}
+.hub-general-note{font-size:16px;line-height:20px;font-weight:500;letter-spacing:-.5px;overflow-wrap:anywhere}
+.reminders-empty{display:flex;flex-direction:column;align-items:center;gap:20px;padding-top:0;text-align:center}
+.empwr-app .reminders-empty h2{font-size:18px;line-height:22px;letter-spacing:-.5px}
+.empwr-app .reminders-empty .primary-button,.empwr-app .hub-record-empty .primary-button{width:auto;padding:8px 12px;font-size:14px}
+.reminder-form-content>h2{margin-bottom:16px!important}.reminder-form-fields{display:flex;flex-direction:column;gap:16px}
+.hub-repeat-fields{display:flex;flex-direction:column;gap:20px}.hub-repeat-fields>div:first-child:not(.appointment-field){display:flex;flex-direction:column;gap:20px}
+.hub-repeat-fields .hub-inline-dates{display:grid!important;grid-template-columns:1fr 1fr;gap:20px!important}.hub-inline-dates>.appointment-field{min-width:0}
+.hub-end-label{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:16px;line-height:20px;font-weight:500;letter-spacing:-.5px}
+.hub-end-label>button{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;white-space:nowrap}
+.hub-date-disabled{opacity:.5}.hub-repeat-fields .med-repeat-option strong{font-size:16px}.hub-repeat-fields .med-weekdays{padding:12px;background:#f4f5f5;border-radius:8px;justify-content:space-between}
+.hub-repeat-fields .med-weekdays>button{width:40px;height:40px;font-size:14px;border-radius:50%;border:0;background:#fff;color:#6e7776}
+.hub-repeat-fields .med-weekdays>button[aria-pressed=true]{background:#00a37e;color:#fff}
+.hub-notes{height:48px!important}.reminder-form-fields .helper{margin-top:0!important}
+.empwr-app .hub-advanced{display:flex;align-items:center;justify-content:space-between;padding:16px;border:1.5px solid #dadddc;border-radius:8px;width:100%;font-size:16px;line-height:20px;font-weight:500}
+.hub-advanced-heading{display:flex;gap:12px;align-items:center}.hub-advanced-heading>button{display:flex;align-items:center;transform:rotate(180deg)}
+.hub-record-title{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:4px 0 16px}
+.hub-record-title>h3{font-size:20px;line-height:24px;letter-spacing:-.5px;font-weight:500;margin:0;color:#3b403e}
+.hub-record-title>button{display:flex;gap:8px;align-items:center;font-size:16px;font-weight:500;white-space:nowrap}
+.hub-checkbox{display:inline-flex;width:16px;height:16px;flex:none;border:1px solid #8d9896;border-radius:1px;background:#fff;align-items:center;justify-content:center;color:#fff;pointer-events:none}
+.hub-checkbox[data-checked=true]{background:#00876c;border-color:#00876c}
+.hub-selection-results{display:flex;flex-direction:column;gap:24px;margin-top:16px}
+.hub-med-select{position:relative;display:flex;min-height:129px;border:1px solid #eaebeb;border-radius:14px;overflow:hidden;gap:16px;background:#fff}
+.hub-med-select.selected{border-color:#8db9ae}
+.empwr-app .hub-record-hit{position:absolute;inset:0;z-index:2;width:100%;height:100%;border-radius:14px}
+.hub-med-select>.hub-checkbox{position:absolute;right:12px;top:12px}
+.hub-med-select-copy{flex:1;min-width:0;padding:12px 12px 8px 0}.hub-med-select .med-identity{padding:0;gap:4px}.hub-med-select .med-name{padding-right:22px}
+.hub-med-select .med-date-summary{white-space:normal;flex-wrap:wrap;gap:4px}.hub-med-select .med-schedule-summary{display:flex;flex-direction:column-reverse;gap:4px;margin-top:8px}
+.hub-med-select .med-list-repeat{margin:0!important;font-size:12px;line-height:16px}
+.empwr-app .hub-appointment-select{display:flex;flex-direction:column;gap:8px;width:100%;border:1px solid #eaebeb;border-radius:8px;padding:12px;text-align:left;background:#fff}
+.empwr-app .hub-appointment-select.selected{border-color:#00a37e;background:#f5fcf9}
+.hub-appointment-select>strong{display:flex;align-items:center;gap:4px;font:700 14px/17px 'Inter',sans-serif;color:#3b403e}
+.hub-appointment-select>span{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;line-height:16px;letter-spacing:-.5px;color:#535b5a}
+.hub-appointment-select>span>span{display:flex;align-items:center;gap:8px}
+.hub-record-empty{display:flex;align-items:center;flex-direction:column;gap:20px;text-align:center;padding-top:16px}
+.hub-record-empty>h3{font-size:18px;line-height:22px;letter-spacing:-.5px;font-weight:500;margin:0;color:#3b403e}
+.home-drawer-overlay{position:absolute;inset:0;z-index:26;background:transparent}
+.home-side-drawer{position:absolute;z-index:27;left:0;top:0;bottom:0;width:183px;background:#f4f5f5;color:#097259;font:500 16px/20px 'Work Sans',sans-serif;padding:calc(var(--mobile-status-bar-height,54px) + 16px) 16px 34px;display:flex;flex-direction:column;gap:27px;outline:none}
+.device-screen:has(.home-side-drawer) .flow-stack{transform:translateX(183px);pointer-events:none}
+.drawer-profile{display:flex;gap:10px;align-items:center;background:#fff;border-radius:8px;padding:8px;height:40px;font:400 14px/16px 'Work Sans',sans-serif;letter-spacing:-.5px;color:#535b5a;margin:0;white-space:nowrap}
+.drawer-profile>span{display:grid;place-items:center;background:#168de8;color:#fff;font:500 9px/12px 'Work Sans',sans-serif;width:24px;height:24px;flex:none;border-radius:50%}
+.drawer-scroll{flex:1;min-height:0}.drawer-scroll .mobile-scroll-content{padding:0}
+.drawer-links{display:flex;flex-direction:column;gap:27px}.drawer-links>button{font:inherit;text-align:left;color:#097259;border:0;background:transparent;padding:0}
+.drawer-prototype{margin-top:32px;font-size:12px;line-height:16px;color:#6e7776}.drawer-prototype>summary{cursor:pointer}.drawer-prototype button{width:100%;margin:12px 0 0;padding:4px;border:1px solid #dadddc;border-radius:4px;font:400 12px/16px 'Work Sans',sans-serif;background:#fff;color:#097259}
+.drawer-close{position:absolute;top:calc(var(--mobile-status-bar-height,54px) + 1px);right:0;display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:transparent;border:0;color:#6e7776}
+.device-screen:has(.reminders-header) .status-bar{background:#fff}
+.device-screen:has(.reminders-header) .flow-fixed-header:has([data-scrolled=true]){box-shadow:0 3px 8px #0000000d}
+.home-general-icon{background:#078e44;border-radius:8px}.home-reminder-general .reminder-tag{background:#e8fff1;color:#05612d}
+.flow-stack:has(.reminders-hub-header[data-empty=true]){--flow-header-height:calc(var(--flow-header-safe-area) + 61px)!important}
+.reminders-hub-header[data-empty=true],.reminders-hub-header[data-empty=true] .reminders-titlebar{height:61px}
+.hub-repeat,.hub-dates,.hub-appointment-meta{line-height:16px}
+.hub-selection-results:has(.hub-appointment-select){gap:20px}
+.hub-record-title{margin-top:0}
+.hub-record-selection>.med-search{margin:0}
+.drawer-scroll{position:relative;inset:auto;width:100%;height:auto;flex:1;min-height:0}
+.reminder-form-content .time-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.reminder-form-content .time-chip{padding-inline:4px}
+.reminder-form-content .time-edit{gap:4px!important}
+.home-side-drawer .mobile-page.drawer-scroll{position:relative;inset:auto;width:100%;height:auto;flex:1;min-height:0;padding:0}
+.hub-repeat-fields:has(.hub-inline-dates){gap:16px}
+.hub-repeat-fields .med-repeat-options,.hub-repeat-fields .med-weekdays{margin-top:0}

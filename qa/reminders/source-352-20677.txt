@@ -1,0 +1,368 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/02ba618f-7e14-4895-8ac3-bd09a1105233";
+const imgImage18 = `${assetPathPrefix}/7d747.png`;
+const imgIosSignal = `${assetPathPrefix}/38e2b.svg`;
+const imgIosWifiSignal = `${assetPathPrefix}/8b083.svg`;
+const imgIosBatteryFull = `${assetPathPrefix}/5e73b.svg`;
+const imgArrowLeft = `${assetPathPrefix}/5824e.svg`;
+const imgGriddyIconsWaterGlassFilled = `${assetPathPrefix}/0c381.svg`;
+const imgToggleSwitch = `${assetPathPrefix}/33b4d.svg`;
+const imgGroup = `${assetPathPrefix}/c6ed2.svg`;
+const imgReactIconsBiCalendar = `${assetPathPrefix}/2623d.svg`;
+const imgMedicationsIcon = `${assetPathPrefix}/d36f8.svg`;
+const imgAppointmentsIcon = `${assetPathPrefix}/1e3fb.svg`;
+const imgReactIconsBiCalendar1 = `${assetPathPrefix}/4154f.svg`;
+const imgUser = `${assetPathPrefix}/3fea0.svg`;
+const imgMapPin = `${assetPathPrefix}/93d33.svg`;
+const imgTimeIcon = `${assetPathPrefix}/0f408.svg`;
+
+export default function HomePageReminderDetails() {
+  return (
+    <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[length:var(--base\/number\/stroke-width\/l,2px)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[32px] size-full" data-node-id="352:20677" data-name="Home Page -> Reminder Details">
+      <div className="bg-[var(--base\/color\/neutral\/white,white)] content-stretch flex flex-col gap-[var(--base\/number\/spacing\/02,4px)] items-start relative shrink-0 w-full" data-node-id="352:20678" data-name="top-section">
+        <div className="content-stretch flex h-[44px] items-center justify-between pb-[8px] pt-[12px] px-[24px] relative shrink-0 w-full" data-node-id="352:20679" data-name="status-bar">
+          <p className="[word-break:break-word] font-['Montserrat:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#111827] text-[14px] whitespace-nowrap" data-node-id="352:20680">
+            4:56
+          </p>
+          <div className="content-stretch flex gap-[6px] items-center relative shrink-0" data-node-id="352:20681" data-name="status-icons">
+            <div className="relative shrink-0 size-[20px]" data-node-id="352:20682" data-name="ios-signal">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIosSignal} />
+            </div>
+            <div className="relative shrink-0 size-[20px]" data-node-id="352:20684" data-name="ios-wifi-signal">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIosWifiSignal} />
+            </div>
+            <div className="h-[20px] relative shrink-0 w-[28px]" data-node-id="352:20686" data-name="ios-battery-full">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIosBatteryFull} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--base\/number\/spacing\/05,16px)] items-start relative shrink-0 w-full" data-node-id="352:20688">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="352:20689">
+            <div className="content-stretch flex gap-[80px] items-center px-[var(--base\/number\/spacing\/04,12px)] relative shrink-0 w-full" data-node-id="352:20690" data-name="navigation-bar">
+              <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 size-[40px]" data-node-id="352:20691" data-name="back-button">
+                <div className="relative shrink-0 size-[24px]" data-node-id="352:20692" data-name="arrow-left">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgArrowLeft} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/1,24px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/1,20px)] text-center tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20694" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                Reminders
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-b border-solid content-stretch flex gap-[25px] items-center overflow-clip px-[24px] relative shrink-0 w-[388px]" data-node-id="354:22427" data-name="Category Tabs">
+          <div className="border-[#106b70] border-b-2 border-solid content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22428" data-name="tab-bp">
+            <p className="[word-break:break-word] font-['Work_Sans:SemiBold'] font-semibold leading-[normal] relative shrink-0 text-[#106b70] text-[15px] whitespace-nowrap" data-node-id="354:22429">
+              All
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22430" data-name="tab-sleep">
+            <p className="[word-break:break-word] font-['Work_Sans:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b0b5b5] text-[15px] whitespace-nowrap" data-node-id="354:22431">
+              Fluid Intake
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22432" data-name="tab-sleep">
+            <p className="[word-break:break-word] font-['Work_Sans:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b0b5b5] text-[15px] whitespace-nowrap" data-node-id="354:22433">
+              Medication
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22436" data-name="tab-glucose">
+            <p className="[word-break:break-word] font-['Work_Sans:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b0b5b5] text-[15px] whitespace-nowrap" data-node-id="354:22437">
+              Appointment
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22434" data-name="tab-glucose">
+            <p className="[word-break:break-word] font-['Work_Sans:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b0b5b5] text-[15px] whitespace-nowrap" data-node-id="354:22435">
+              General
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0" data-node-id="354:22438" data-name="tab-sleep">
+            <p className="[word-break:break-word] font-['Work_Sans:Medium'] font-medium leading-[normal] relative shrink-0 text-[#b0b5b5] text-[15px] whitespace-nowrap" data-node-id="354:22439">
+              Sleep
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--base\/number\/spacing\/05,16px)] items-start min-h-px overflow-clip px-[12px] py-[var(--base\/number\/spacing\/06,20px)] relative w-full" data-node-id="352:20697">
+        <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[length:var(--base\/number\/stroke-width\/m,1.5px)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-solid content-stretch flex flex-col gap-[12px] items-start justify-center p-[var(--base\/number\/spacing\/04,12px)] relative rounded-[var(--base\/number\/corner-radius\/m,8px)] shrink-0 w-full" data-node-id="352:20698" data-name="Remind me at scheduled times">
+          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="352:20699">
+            <div className="content-stretch flex gap-[12px] items-center relative shrink-0" data-node-id="352:20700">
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0" data-node-id="352:20701" data-name="Choice text">
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/1,24px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/1,20px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20702" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  12:00 AM
+                </p>
+              </div>
+              <div className="bg-[#eaf6fd] content-stretch flex gap-[6px] items-center justify-center pl-[8px] pr-[10px] py-[4px] relative rounded-[var(--base\/number\/corner-radius\/sm,4px)] shrink-0" data-node-id="352:20703" data-name="ResponseType">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20704" data-name="griddy-icons:water-glass-filled">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGriddyIconsWaterGlassFilled} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/blue\/90,#0a5085)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20706" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  Fluid Intake
+                </p>
+              </div>
+            </div>
+            <div className="h-[24px] relative shrink-0 w-[44px]" data-node-id="352:20707" data-name="Toggle Switch">
+              <div className="absolute inset-[0_0_-4.17%_0]">
+                <img alt="" className="block max-w-none size-full" src={imgToggleSwitch} />
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full" data-node-id="352:20709">
+            <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="352:20710" data-name="fluent-emoji-high-contrast:repeat-button">
+              <div className="absolute inset-[3.13%]" data-node-id="352:20711" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20714" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              Mon, Tues, Wed, Fri at 9AM , 1PM, 10PM
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--base\/number\/spacing\/04,12px)] items-center relative shrink-0 w-full" data-node-id="352:20715">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--base\/number\/spacing\/04,12px)] items-center min-w-px relative" data-node-id="352:20716">
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20717">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20718" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20721" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/22/2026
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20722" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                →
+              </p>
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20723">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20724" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20727" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/29/2026
+                </p>
+              </div>
+            </div>
+            <div className="h-[16px] relative shrink-0 w-0" data-node-id="352:20728" data-name="Time and status" />
+          </div>
+        </div>
+        <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[length:var(--base\/number\/stroke-width\/m,1.5px)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-solid content-stretch flex flex-col gap-[12px] items-start justify-center p-[var(--base\/number\/spacing\/04,12px)] relative rounded-[var(--base\/number\/corner-radius\/m,8px)] shrink-0 w-full" data-node-id="352:20729" data-name="Remind me at scheduled times">
+          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="352:20730">
+            <div className="content-stretch flex gap-[12px] items-center relative shrink-0" data-node-id="352:20731">
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0" data-node-id="352:20732" data-name="Choice text">
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/1,24px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/1,20px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20733" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  12:00 AM
+                </p>
+              </div>
+              <div className="bg-[var(--base\/color\/violet\/10,#f4ecfe)] content-stretch flex gap-[6px] items-center justify-center pl-[8px] pr-[10px] py-[4px] relative rounded-[var(--base\/number\/corner-radius\/sm,4px)] shrink-0" data-node-id="352:20734" data-name="ResponseType">
+                <div className="relative shrink-0 size-[16px]" data-node-id="357:23302" data-name="Medications Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMedicationsIcon} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/violet\/90,#440b8e)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20737" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  Medication
+                </p>
+              </div>
+            </div>
+            <div className="h-[24px] relative shrink-0 w-[44px]" data-node-id="352:20738" data-name="Toggle Switch">
+              <div className="absolute inset-[0_0_-4.17%_0]">
+                <img alt="" className="block max-w-none size-full" src={imgToggleSwitch} />
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full" data-node-id="352:20740">
+            <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="352:20741" data-name="fluent-emoji-high-contrast:repeat-button">
+              <div className="absolute inset-[3.13%]" data-node-id="352:20742" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20745" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              Mon, Tues, Wed, Fri at 9AM , 1PM, 10PM
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--base\/number\/spacing\/04,12px)] items-center relative shrink-0 w-full" data-node-id="352:20746">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--base\/number\/spacing\/04,12px)] items-center min-w-px relative" data-node-id="352:20747">
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20748">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20749" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20752" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/22/2026
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20753" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                →
+              </p>
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20754">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20755" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20758" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/29/2026
+                </p>
+              </div>
+            </div>
+            <div className="h-[16px] relative shrink-0 w-0" data-node-id="352:20759" data-name="Time and status" />
+          </div>
+          <div className="content-stretch flex gap-[var(--base\/number\/spacing\/02,4px)] items-center relative shrink-0 w-full" data-node-id="354:22497">
+            <div className="bg-gradient-to-b border border-[var(--base\/color\/green\/80,#0ac25a)] border-solid from-[var(--base\/color\/green\/30,#bff8d8)] overflow-clip relative rounded-[9999px] shrink-0 size-[24px] to-[var(--base\/color\/green\/90,#0b8e44)]" data-node-id="354:22498">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[28px] top-1/2" data-node-id="354:22499" data-name="image 18">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage18} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/body\/1,20px)] relative shrink-0 text-[color:var(--base\/color\/neutral\/black,black)] text-[length:var(--base\/number\/font-size\/body\/1,16px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="354:22500" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              Amoxicillin
+            </p>
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="354:22501" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              500 mg
+            </p>
+          </div>
+        </div>
+        <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[length:var(--base\/number\/stroke-width\/m,1.5px)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-solid content-stretch flex flex-col gap-[12px] items-start justify-center p-[var(--base\/number\/spacing\/04,12px)] relative rounded-[var(--base\/number\/corner-radius\/m,8px)] shrink-0 w-full" data-node-id="352:20760" data-name="Remind me at scheduled times">
+          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="352:20761">
+            <div className="content-stretch flex gap-[12px] items-center relative shrink-0" data-node-id="352:20762">
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0" data-node-id="352:20763" data-name="Choice text">
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/1,24px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/1,20px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20764" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  12:00 AM
+                </p>
+              </div>
+              <div className="bg-[var(--base\/color\/pink\/10,#feecf6)] content-stretch flex gap-[6px] items-center justify-center pl-[8px] pr-[10px] py-[4px] relative rounded-[var(--base\/number\/corner-radius\/sm,4px)] shrink-0" data-node-id="352:20765" data-name="ResponseType">
+                <div className="relative shrink-0 size-[18px]" data-node-id="357:23305" data-name="Appointments Icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAppointmentsIcon} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/pink\/90,#8e0b55)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20768" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  Appointment
+                </p>
+              </div>
+            </div>
+            <div className="h-[24px] relative shrink-0 w-[44px]" data-node-id="352:20769" data-name="Toggle Switch">
+              <div className="absolute inset-[0_0_-4.17%_0]">
+                <img alt="" className="block max-w-none size-full" src={imgToggleSwitch} />
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="354:22440" data-name="Appointment Details">
+            <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-node-id="354:22441" data-name="Time Row">
+              <div className="content-stretch flex gap-[var(--base\/number\/spacing\/02,4px)] items-end relative shrink-0" data-node-id="354:22442">
+                <div className="relative shrink-0 size-[20px]" data-node-id="354:22443">
+                  <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16.667px] top-1/2" data-node-id="354:22444" data-name="react-icons/BiCalendar">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar1} />
+                  </div>
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/3,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/100,#3b403e)] text-[length:var(--base\/number\/font-size\/title\/3,16px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="354:22447" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/23/2026
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full" data-node-id="354:22454">
+              <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="354:22455" data-name="Doctor Row">
+                <div className="relative shrink-0 size-[14px]" data-node-id="354:22456" data-name="user">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUser} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[0] overflow-hidden relative shrink-0 text-[#5c6060] text-[14px] text-ellipsis tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-pre" data-node-id="354:22458" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  <span className="font-['Work_Sans:Regular'] leading-[16px] text-[#6e7776] tracking-[-0.5px]" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                    With
+                  </span>
+                  <span className="font-['Work_Sans:Regular'] leading-[16px] tracking-[-0.5px]" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>{` `}</span>
+                  <span className="font-['Work_Sans:Regular'] leading-[16px] text-[#3b403e] tracking-[-0.5px]" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                    Dr. Angela Cruz
+                  </span>
+                  <span className="font-['Work_Sans:Regular'] leading-[16px] tracking-[-0.5px]" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>{`  `}</span>
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="354:22459" data-name="Location Row">
+                <div className="relative shrink-0 size-[14px]" data-node-id="354:22460" data-name="map-pin">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMapPin} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/label\/1,16px)] overflow-hidden relative shrink-0 text-[14px] text-[color:var(--base\/color\/grey\/90,#535b5a)] text-ellipsis tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] w-[242px] whitespace-nowrap" data-node-id="354:22462" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  West Medical Plaza
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--base\/color\/neutral\/white,white)] border-[length:var(--base\/number\/stroke-width\/m,1.5px)] border-[var(--base\/color\/grey\/20,#eaebeb)] border-solid content-stretch flex flex-col gap-[12px] items-start justify-center p-[var(--base\/number\/spacing\/04,12px)] relative rounded-[var(--base\/number\/corner-radius\/m,8px)] shrink-0 w-full" data-node-id="352:20791" data-name="Remind me at scheduled times">
+          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="352:20792">
+            <div className="content-stretch flex gap-[12px] items-center relative shrink-0" data-node-id="352:20793">
+              <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0" data-node-id="352:20794" data-name="Choice text">
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/1,24px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/1,20px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20795" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  12:00 AM
+                </p>
+              </div>
+              <div className="bg-[var(--base\/color\/green\/10,#e7fef1)] content-stretch flex gap-[6px] items-center justify-center pl-[8px] pr-[10px] py-[4px] relative rounded-[var(--base\/number\/corner-radius\/sm,4px)] shrink-0" data-node-id="352:20796" data-name="ResponseType">
+                <div className="relative shrink-0 size-[16px]" data-node-id="357:23311" data-name="time-icon">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTimeIcon} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/green\/100,#05612d)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20799" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  General
+                </p>
+              </div>
+            </div>
+            <div className="h-[24px] relative shrink-0 w-[44px]" data-node-id="352:20800" data-name="Toggle Switch">
+              <div className="absolute inset-[0_0_-4.17%_0]">
+                <img alt="" className="block max-w-none size-full" src={imgToggleSwitch} />
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[8px] items-start relative shrink-0 w-full" data-node-id="352:20802">
+            <div className="overflow-clip relative shrink-0 size-[16px]" data-node-id="352:20803" data-name="fluent-emoji-high-contrast:repeat-button">
+              <div className="absolute inset-[3.13%]" data-node-id="352:20804" data-name="Group">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup} />
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/label\/1,16px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/label\/1,14px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="352:20807" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              Mon, Tues, Wed, Fri at 9AM , 1PM, 10PM
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--base\/number\/spacing\/04,12px)] items-center relative shrink-0 w-full" data-node-id="352:20808">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--base\/number\/spacing\/04,12px)] items-center min-w-px relative" data-node-id="352:20809">
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20810">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20811" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20814" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/22/2026
+                </p>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Regular')] font-normal leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20815" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                →
+              </p>
+              <div className="content-stretch flex gap-[2px] items-center relative shrink-0" data-node-id="352:20816">
+                <div className="relative shrink-0 size-[16px]" data-node-id="352:20817" data-name="react-icons/BiCalendar">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgReactIconsBiCalendar} />
+                </div>
+                <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/80,#6e7776)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20820" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+                  10/29/2026
+                </p>
+              </div>
+            </div>
+            <div className="h-[16px] relative shrink-0 w-0" data-node-id="352:20821" data-name="Time and status" />
+          </div>
+          <div className="content-stretch flex items-start relative shrink-0 w-full" data-node-id="354:22464">
+            <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/title\/3,20px)] relative shrink-0 text-[color:var(--base\/color\/grey\/90,#535b5a)] text-[length:var(--base\/number\/font-size\/title\/3,16px)] tracking-[var(--base\/number\/letter-spacing\/dense,-0.5px)] whitespace-nowrap" data-node-id="354:22469" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+              This is a reminder note.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#f4f5f5] bottom-0 content-stretch drop-shadow-[var(--base\/number\/elevation\/top\/high\/x-axis,0px)_4px_8px_rgba(0,0,0,0.25)] flex h-[34px] items-center justify-center left-0 w-[388px]" data-node-id="352:20822" data-name="home-indicator-area">
+        <div className="bg-[#0f172a] h-[5px] opacity-30 relative rounded-[3px] shrink-0 w-[134px]" data-node-id="352:20823" data-name="drag-handle" />
+      </div>
+      <div className="absolute bg-[var(--base\/color\/neutral\/white,white)] bottom-[34px] content-stretch flex flex-col gap-[var(--base\/number\/spacing\/03,8px)] items-start left-0 overflow-clip p-[12px] shadow-[var(--base\/number\/elevation\/bottom\/low\/x-axis,0px)_var(--base\/number\/elevation\/bottom\/low\/y-axis,-4px)_var(--base\/number\/elevation\/bottom\/low\/blur,4px)_var(--base\/number\/elevation\/bottom\/low\/spread,0px)_rgba(0,0,0,0.04)] w-[388px]" data-node-id="352:20824">
+        <div className="bg-[var(--base\/color\/teal\/90,#097259)] content-stretch flex items-center justify-center overflow-clip px-[8px] py-[var(--base\/number\/spacing\/03,8px)] relative rounded-[4px] shrink-0 w-full" data-node-id="352:20825" data-name="Filters">
+          <p className="[word-break:break-word] font-[family-name:var(--base\/font\/style\/primary,'Work_Sans:Medium')] font-medium leading-[var(--base\/number\/line-height\/body\/2-base,20px)] relative shrink-0 text-[color:var(--base\/color\/neutral\/white,white)] text-[length:var(--base\/number\/font-size\/body\/2-base,14px)] tracking-[var(--base\/number\/letter-spacing\/reg,0px)] whitespace-nowrap" data-node-id="352:20826" style={{ fontFeatureSettings: '"zero" 1, "ss03" 1, "ss06" 1, "ss01" 1, "ss04" 1' }}>
+            Add Reminder
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+
+These styles are contained in the design: semantic/primary/title/1/medium: Font(family: "base/font/style/primary", style: base/font/weight/medium, size: base/number/font-size/title/1, weight: 500, lineHeight: base/number/line-height/title/1, letterSpacing: base/number/letter-spacing/dense), semantic/primary/label/1/medium: Font(family: "base/font/style/primary", style: base/font/weight/medium, size: base/number/font-size/label/1, weight: 500, lineHeight: base/number/line-height/label/1, letterSpacing: base/number/letter-spacing/dense), semantic/primary/body/2/medium: Font(family: "base/font/style/primary", style: base/font/weight/medium, size: base/number/font-size/body/2-base, weight: 500, lineHeight: base/number/line-height/body/2-base, letterSpacing: base/number/letter-spacing/reg), semantic/primary/body/2/regular: Font(family: "base/font/style/primary", style: base/font/weight/regular, size: base/number/font-size/body/2-base, weight: 400, lineHeight: base/number/line-height/body/2-base, letterSpacing: base/number/letter-spacing/reg), semantic/primary/body/1/regular: Font(family: "base/font/style/primary", style: base/font/weight/regular, size: base/number/font-size/body/1, weight: 400, lineHeight: base/number/line-height/body/1, letterSpacing: base/number/letter-spacing/reg), semantic/primary/title/3/medium: Font(family: "base/font/style/primary", style: base/font/weight/medium, size: base/number/font-size/title/3, weight: 500, lineHeight: base/number/line-height/title/3, letterSpacing: base/number/letter-spacing/dense), semantic/primary/label/1/regular: Font(family: "base/font/style/primary", style: base/font/weight/regular, size: base/number/font-size/label/1, weight: 400, lineHeight: base/number/line-height/label/1, letterSpacing: base/number/letter-spacing/dense), Top/High: Effect(type: DROP_SHADOW, color: #00000040, offset: (base/number/elevation/top/high/x-axis, 4), radius: 16, spread: 0).
+
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.
