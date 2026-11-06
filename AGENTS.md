@@ -180,3 +180,10 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - The General Reminder Title annotation requires the title to appear in its Home alert when due. General alerts join the existing equal-height carousel and honor enabled, date and repeat settings; this supersedes the earlier restriction against inventing a General reminder from future examples. No additional Appointment Home alert is invented.
 - Preserve the 16px gutter, fixed chrome, original SVG files and intrinsic icon dimensions. Time chips fit three columns in the hub fluid form without overflow. The drawer scroll root must have enough specificity to stay relative within its flex container; never edit protected MobileScroll for app layout.
 - This is still an in-memory prototype. No external notification delivery, integrations or backend persistence are added.
+
+## Appointment reminder revision — November 6, 2026
+
+- Use the updated appointment reminder cards from Appointments Final Scope / Appointments, frames 348:19741 and 357:23192 (365:* reminder rows). Default reminders show a title and independent switch above a single clickable time/date row with original 28px clock and calendar SVGs.
+- New appointments immediately contain enabled reminders two hours before and at the appointment time. Untouched defaults follow appointment time/date changes; custom reminders retain their independent dates, times, identities and switch values.
+- Keep Set Reminders available after reminders exist. It opens the source two-time form with the saved values; Add Reminders appends another time. Individual time/date rows edit only their occurrence. Back cancels uncommitted changes. The shared Reminders hub and upcoming appointment banner read the same records.
+- The updated on-switch export is isolated at assets/figma/appointment-reminder/33b4d.svg because its paint differs from the older export with the same filename. Preserve other flows' existing source assets.

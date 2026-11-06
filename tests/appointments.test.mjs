@@ -1,11 +1,35 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { appointmentReminderDefaults, sortAppointments, upcomingAppointmentReminder, validAppointment, mergeAppointmentReminders, uniqueAppointmentReminders } from '../src/appointments.ts';
+import { createAppointmentReminders, updateAppointmentSchedule, appointmentReminderLabel, appointmentReminderDefaults, sortAppointments, upcomingAppointmentReminder, validAppointment, mergeAppointmentReminders, uniqueAppointmentReminders } from '../src/appointments.ts';
 const a=(id,date,time,reminders=[])=>({id,provider:'Dr. Angela Cruz',location:'West Medical Plaza',date,time,reminders});
 test('appointment reminder defaults handle noon and midnight',()=>{
  assert.deepEqual(appointmentReminderDefaults('19:45'),['17:45','19:45']);
  assert.deepEqual(appointmentReminderDefaults('01:15'),['23:15','01:15']);
  assert.deepEqual(appointmentReminderDefaults('12:00'),['10:00','12:00']);
+});
+test('appointment defaults follow schedule edits while custom reminders and pause states survive',()=>{
+ let n=0;
+ const defaults=createAppointmentReminders('2026-11-06','19:45',()=>`default-${++n}`);
+ defaults[0].enabled=false;
+ const custom={id:'custom',date:'2026-11-04',time:'10:00',enabled:true};
+ const original=a('one','2026-11-06','19:45',[...defaults,custom]);
+ const edited=updateAppointmentSchedule(original,{date:'2026-11-07',time:'01:15'});
+ assert.deepEqual(edited.reminders.map(r=>[r.id,r.date,r.time,r.enabled]),[
+  ['default-1','2026-11-07','23:15',false],['default-2','2026-11-07','01:15',true],['custom','2026-11-04','10:00',true]
+ ]);
+ assert.equal(appointmentReminderLabel(edited,edited.reminders[0]),'Remind me 2 hours before');
+ assert.equal(appointmentReminderLabel(edited,edited.reminders[1]),'Remind me at scheduled time');
+ assert.equal(appointmentReminderLabel(edited,custom),null);
+ assert.equal(original.reminders[0].time,'17:45');
+});
+test('adding a reminder then editing its date preserves the default identities and switches',()=>{
+ const old=[{id:'before',date:'2026-11-06',time:'17:45',enabled:false},{id:'at',date:'2026-11-06',time:'19:45',enabled:true}];
+ const added=mergeAppointmentReminders(old,['17:45','19:45','10:00'],'2026-11-06',null,()=> 'extra');
+ const rows=mergeAppointmentReminders(added,['10:00'],'2026-11-05','extra',()=> 'unused');
+ assert.deepEqual(rows.slice(0,2),old);
+ assert.deepEqual(rows[2],{id:'extra',date:'2026-11-05',time:'10:00',enabled:true});
+ assert.equal(uniqueAppointmentReminders(rows),true);
+ assert.equal(uniqueAppointmentReminders(mergeAppointmentReminders(rows,['19:45'],'2026-11-06','extra',()=> 'unused')),false);
 });
 test('appointments sort by full date and time, without mutating source',()=>{
  const items=[a('late','2026-12-01','09:00'),a('pm','2026-11-06','14:00'),a('am','2026-11-06','08:00')];

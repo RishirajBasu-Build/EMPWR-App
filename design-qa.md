@@ -467,3 +467,24 @@ Interaction verification: drawer entry/close; empty list, add and four-type pick
 Intentional interpretation: later medication selection annotations override older card-click-to-edit annotations. Appointment selection is one appointment at a time and opens its existing reminder editor. Advanced Save commits the fluid reminder and returns to the hub. General title annotation is fulfilled by a due, recurring Home alert in the existing equal-height carousel. No invented Appointment Home alert, system notifications or backend persistence. Existing prototype controls remain available under the drawer disclosure.
 
 Validation: TypeScript/production build passed; 28 protected runtime files unchanged; 24 unit/hosting checks passed. Existing large-bundle advisory remains non-blocking. No remaining actionable P0/P1/P2 findings. final result: passed
+
+## Appointment reminder revision — November 6, 2026
+
+Target: Figma BMI80ChX15L7QaJ38rReU2 / Appointments Final Scope / Appointments. High-fidelity frames 348:19741, 357:23192 and 357:22979; reference captures in qa/appointment-reminder-update/figma-0.png through figma-2.png. Native app code and existing components were retained; no Code Connect mapping was returned.
+
+Evidence and normalization: source frames render at 392×942 including border, from 388×938 Figma frames. The implementation uses the protected 393×852 iPhone and 427×952 Pixel viewports at scale1 in a 1400×1200 browser. Full screenshots were cropped using measured device-screen geometry. Component crops align source and implementation despite the shorter protected iPhone viewport and 16px user-requested gutter. Default/custom/form comparison images combine both artifacts. Dates are session-derived rather than the source's example dates.
+
+Findings fixed: P1 missing default reminder cards and labels; P1 hidden Set Reminders after creation; P2 older switch artwork and missing 28px calendar; P2 custom date typography/slot. These were corrected before the passing captures. The exact current switch export is stored separately because its filename was reused by Figma across paint changes.
+
+Fidelity surfaces:
+- Typography: source Work Sans weights, 16/20 labels, 20/24 time/date, −0.5px tracking; custom date now16px medium. Existing direct time input and date field typography retained.
+- Spacing/layout: source12px card padding/gap, rounded8px cards and thin grey borders; time/date on a single row, switch above;16px shared page gutter. No horizontal overflow on either phone. Content scrolls fully above the fixed Save footer.
+- Colors/tokens: white surfaces, grey20/10 borders, source grey90 labels, black time/date, source teal action and unmodified on/off switch SVGs. Exact downloaded artwork reused without recoloring.
+- Image/asset fidelity: clock28×28, default calendar28×28, custom calendar20×20, on-switch44×25, add20×20. All visible files loaded and rendered at intrinsic dimensions. No substituted drawings.
+- Copy/content: “Remind me 2 hours before”, “Remind me at scheduled time”, “Set Reminders”, and the existing source reminder form copy. Two enabled defaults and custom reminder values match the corresponding states.
+
+Intentional differences: protected live device/status/navigation chrome; current session dates; the source form's absent commit control is supplied by the already-approved fixed Save Reminders footer. Set Reminders stays discoverable after custom reminders, as required for adding more. The additional action increases scrollable content height. Pre-existing unrelated screens were not restyled.
+
+Passing evidence: defaults-passed-comparison.png, custom-passed-comparison.png, reminder-form-comparison.png, iphone-defaults-passed.png, iphone-custom-passed.png and pixel-custom-passed.png. Browser interaction and asset geometry checks passed; console errors were empty. Automated validation completed during publication packaging.
+
+final result: passed
