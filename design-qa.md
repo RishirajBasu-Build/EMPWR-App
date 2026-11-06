@@ -330,3 +330,14 @@ final result: passed
 - No actionable P0/P1/P2 layout issue remains in this spacing change. TypeScript/production build pass; all 28 protected runtime files and all nine existing domain/Sites-worker regression checks pass. All four required hosting files exist.
 
 final result: passed
+
+# Liquid medication SVG correction — November 6, 2026
+
+- User feedback supersedes the older Syrup Version 1 3D bottle in the handoff list. The requested illustrated source is Medication / 259:3435, Syrup Version 2, hugeicons:medicine-syrup (I259:3435;2164:9387).
+- Read the original card and icon through Figma design context, then downloaded its unmodified c4624.svg. Root width/height/viewBox are 39.3751 × 62.7084. The card source places it within a centered 70 px icon slot, with a 0.5 px horizontal offset on a 105 px amber gradient panel (#faecbd → #e8b816).
+- MedicationArt now uses this local SVG for liquid defaults in full lists, review, compact summaries and dose sheets. Large rendering retains the intrinsic SVG dimensions; compact rendering uses a uniform 2/7 transform with the original aspect ratio. User-uploaded images remain the first branch and still override defaults. No SVG paths or root attributes were edited.
+- Reviewed browser evidence: qa/liquid-svg/iphone-list.jpg, pixel-list.jpg and pixel-review.jpg. The outlined bottle matches the Figma card screenshot, stays centered, and is fully visible on both phone presets. Review retains a 105 × 105 panel; list retains its existing 105 px illustration column and card height. Shared 24 px page gutters are unchanged.
+- Browser verification confirms c4624.svg loads successfully, every visible medication-list image loads, and large CSS image dimensions round to 39.361 × 62.685 px at the preview's browser zoom. The compact SVG also loads with uniform scaling. Browser error log is empty.
+- Runtime integrity passes for all 28 protected files. TypeScript/production build and all nine existing domain/Sites-worker checks pass. All required hosting output files are present. No new test was needed for this asset-only correction, and no actionable P0/P1/P2 mismatch remains in scope.
+
+final result: passed

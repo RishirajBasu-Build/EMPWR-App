@@ -137,3 +137,8 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Use the category tabs' 24 px left/right padding as the shared page gutter throughout Home, Medication, Fluid Intake, setup/edit forms, full lists, fixed action footers and bottom sheets. Keep the gutter in one CSS variable, `--page-gutter`.
 - Apply the page gutter once. Reset direct dashboard/detail sections' horizontal padding when their main container owns it; retain internal card/control spacing and protected device chrome.
 - Time chips may wrap to fewer columns when necessary to retain readable text and complete edit/remove controls inside the shared gutter. Preserve all functionality and the existing 24 px top margin above medication progress.
+
+## Liquid medication artwork — November 6, 2026
+
+- The user's liquid-artwork correction supersedes the older 3D bottle used in the Medication Handoff list variant. Use the original outlined white bottle SVG from Medication / 259:3435 / hugeicons:medicine-syrup (I259:3435;2164:9387), Syrup Version 2.
+- The unmodified exported asset is public/assets/figma/c4624.svg (intrinsic 39.3751 × 62.7084). Large cards/review retain the original 105 px amber gradient panel, centered source glyph and 0.5 px source horizontal offset. Compact liquid icons reuse this SVG with uniform scaling, without stretching. Uploaded photos still take priority.
