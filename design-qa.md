@@ -1,4 +1,4 @@
-# EMPWR Fluid Intake prototype — design QA
+# EMPWR Medication and Fluid Intake prototype — design QA
 
 final result: passed
 
@@ -225,5 +225,76 @@ final result: passed
 - Full-width indicator background and shadows visible in combined comparisons; Pixel keeps its original black navigation area and fixed camera/status assets.
 - Reading editor opens, its indicator surface is white with no extra shadow, and focusing its input preserves the keyboard safe area; close dismisses normally.
 - Browser warning/error log empty. TypeScript, runtime integrity, production build and all four Sites worker tests pass. Existing build chunk-size advisory remains.
+
+final result: passed
+
+# Medication Handoff integration — November 6, 2026
+
+final result: passed
+
+## Source, scope and capture normalization
+
+- Visual truth: Figma BMI80ChX15L7QaJ38rReU2 / Medication Final Scope / Medication handoff (326:13585). Read all 31 frame states and their annotations; requirements are mapped in medication-flow.md. The pre-existing Fluid Intake flow remains the shared second category.
+- Local implementation verified through the in-app browser at port 4187. Viewport override 1680 × 1560; native browser reports 1527 × 1418 CSS px and DPR 1.1. Measured unscaled iPhone screen 392.997 × 851.989 CSS px; captures 393 × 852. Pixel screen 426.989 × 951.989 CSS px; captures 427 × 952.
+- Reference PNGs in qa/medication/med-source-*.png are 392 × 848, except the first two form references at 392 × 882 and the longer dashboard reference at 392 × 973. Full comparisons normalize source width to 393 while retaining its aspect ratio. App content is compared at equal CSS scale; source-only extra blank height is not stretched into the runtime's fixed viewport.
+- Source clocks, device borders, notch, home indicator and camera are excluded from app fidelity findings. The protected runtime retains live status clocks and platform-specific device geometry. Native screenshots are JPEG data, with capture softness/color tone; CSS colors and original image files were also checked directly. No color compensation was applied to the source tokens.
+- Dynamic medication names, uploaded images, dates, dose times, record counts and repeat summaries differ deliberately with the entered example. The review comparison uses an existing-record edit, so Update / Save Medication Changes replace the add-flow labels. Both add and edit paths were tested.
+
+## Combined visual evidence opened and reviewed
+
+- Empty / required fields: compare-final-empty.jpg and compare-final-details-empty.jpg.
+- Conditions, schedule and review: compare-final-conditions.jpg, compare-final-schedule-selected.jpg, compare-final-review.jpg.
+- Tracking / list: compare-final-taken-expanded.jpg, compare-final-full-list-menu.jpg, compare-final-taken-sheet-before.jpg and compare-final-pending-sheet.jpg.
+- Notification and confirmations: compare-final-empty-permission-warning.jpg, compare-final-delete-schedule-confirmation.jpg and compare-final-delete-medication-confirmation.jpg.
+- Focused same-scale anatomy: focused-dose-row.jpg and focused-pending-row.jpg compare the same Amoxicillin row's original 3D pill artwork, type/condition icons, note, reminder and Taken control. focused-list-card.jpg checks the 105 px illustration slot and compact content. Full list card heights measured 128.991 px against the 129 px source.
+- Pixel post-fix evidence: final-pixel-injection-review.jpg and final-pixel-menu-above.jpg. The earlier pixel-tablet-review-before-footer-fix.jpg is failure-history evidence, not a passing capture.
+- Fluid regression: final-fluid-regression.jpg shows 1800oz on one line and fully visible graph circles at zero, both horizontal edges and the peak.
+
+## Findings and correction history
+
+1. P2: the condition explanation stayed on one line, pulling the chip field and Notes upward; the textarea also showed a native resize handle. Restored the source 342 px explanation width and removed that handle. The final conditions comparison now retains the two-line explanation and source grouping.
+2. P2: the full list displayed extra note rows and date-before-time ordering, increasing a 129 px card to about 162 px. Kept notes in review, editing and dose sheets, restored the source list ordering and 129 px card anatomy, and recaptured the full list with its menu open.
+3. P2: accordion chevrons initially pointed sideways. Corrected their source orientation for collapsed/expanded states. The final Taken comparison shows the source outlined cards, individual completion marks and View action.
+4. P2: enabling permission from the warning's settings sheet initially unmounted that sheet immediately. Kept its dialog mounted until Done. Browser verification confirms the sheet remains open after enabling, Done stays visible, and the warning then disappears.
+5. P1: Android's already-reserved 48 px navigation region was being added again by the shared app-footer background extension. That made FlowStack scrollHeight 952 versus clientHeight 904 and allowed its header to shift upward by 48 px during focused-control navigation. Disabled the app-owned footer extension on Android. Post-fix measurements are scrollHeight 904, clientHeight 904, scrollTop 0, and header top equal to screen top. The final Pixel review shows the complete fixed title and original black navigation bar. All 28 protected runtime files remain unchanged.
+6. P2: a focused comparison found the compact list's flat capsule graphic had also been used in dose sheets. Restored their original Figma 7d747.png 3D pill artwork at 28 × 28 inside the 24 px circle. Both Pending and Taken focused comparisons were recaptured and reviewed after the correction.
+7. Last-card menus were also verified to open above the footer when space below is insufficient. Edit, reminder setup and delete remain reachable on Pixel without shifting fixed chrome.
+
+No actionable P0/P1/P2 findings remain after the post-fix comparisons.
+
+## Required fidelity surfaces
+
+- Fonts: locally bundled Work Sans 400/500/600 and IBM Plex Mono. Source 28/32 step headings, 20/24 navigation/review titles, 14/20 labels and 14/16 supporting copy retained. Verified Work Sans in the rendered header.
+- Spacing: source 12 px form gutters, 20/24 px vertical groups, 36 px fields/time chips/buttons, 8 px chip gaps, 105 px medication illustration columns, 129 px full-list cards and phone-scoped bottom sheets. Longer real names/conditions can grow rather than clip. Headers remain fixed with the existing scroll shadows.
+- Tokens: teal #097259, body #535b5a, muted #6e7776, blue #329cec, amber warning #fef9e6 / #8e700b, and the original source type-panel background colors. Disabled first-stage CTA uses #c5cac9. Progress is drawn from actual dose counts rather than a fixed mock SVG arc.
+- Assets: original Figma SVGs and photographs downloaded locally. Source SVG intrinsic geometry retained in measured slots; photos keep source cropping for the original demo artwork and dynamic uploads take priority. All referenced local assets are nonempty and loaded. The corrected dose image measures 27.997 × 27.997 CSS px. Device, keyboard, status and navigation assets were preserved.
+- Copy: annotation-defined field labels, helpers, validation rules, condition controls, repeat settings, review, lists, menus, check-in controls and both delete confirmations implemented. Current client date replaces historical sample dates. The empty Home card shows a dash; counts include every dose scheduled across the entire day.
+
+## Browser interactions verified
+
+- Empty Home → Medication → all three details steps → Schedule → Review → save → populated dashboard. Required first-stage values and complete unique times gate progression; image remains optional.
+- Strength rejects alphabetic input. Dose/frequency accept numeric input. Duplicate times are rejected; Add Time disables at the frequency limit. Existing times remain removable/editable.
+- Computer file chooser uploads the source sample image, shows success, retains it through review, and removes it when requested. Removal restores the source type illustration. Camera shows the annotated app-only behavior without requesting camera access.
+- Conditions select/remove, inline Add Condition confirm/cancel, reopening selection with existing chips, and notes work. Optional conditions/notes can remain blank.
+- Start changes reset end, end cannot precede start, Ends Never disables/re-enables end entry, selected weekdays require at least one selection. New medication defaults to a finite same-day range as shown in its source; Fluid Intake retains its separately specified no-end daily default.
+- Schedule Edit, cancel/confirm Delete Schedule, recreation after deletion, and saving edits preserve medication details. Medication editing updates the same record, retaining compatible existing dose check-ins.
+- All-day denominator verified: three example medications produce seven doses. Partial 2/3 Taken groups include the untaken dose in View; marking it updates both dashboard and Home. Completing all seven yields 100% and an empty Pending list, with no duplicate check-in action.
+- Next upcoming pending time sorts first; next reminders skip completed occurrences. Set Reminder As Per Schedule enables that medication's reminders. Notification-off disables reminder toggles; enabling through the warning restores them and stays open until Done.
+- First three summaries, View More, case-insensitive search by name/type/condition, no-results state, per-record menu, edit, reminder setup and medication deletion confirmation all work. Cancel retains the record; confirm removes its list entry and scheduled dose occurrences.
+- iPhone and Pixel navigation and fields pass. Pixel tablet and Injection types were entered and reviewed; saving a one-dose fourth medication changed 3/7 to 3/8, and deleting it restored 3/7. All four types are supported.
+- Fluid Intake regression: counter 7 → 225 gives 1800oz / 1800 oz and graph data; Today stays a 44 px single line and all graph circles remain visible. Default daily/today reminder, time-only upcoming banner, letter/number keyboard switching, outside-tap keyboard dismissal, Home quick logging and shared ounces all passed. Medication navigation and check-ins leave fluid readings unchanged.
+- Browser warning/error log checked: empty.
+
+## Follow-up polish / source limits
+
+- P3 source gap: the supplied medication component set has Capsule, Tablet and Syrup/Liquid artwork but no Injection illustration; a targeted read of the final page, earlier Medication page and Work In Progress page found none. Injection uses the existing original generic medication graphic when no image is uploaded. A provided Injection illustration can replace that fallback; uploads already take priority. Camera is intentionally app-only per annotation.
+- Prototype records and notification permissions are in-memory demonstration state. No external notifications, account integration or backend were requested or added.
+- Existing production chunk-size advisory remains; it does not prevent the build or change behavior.
+
+## Release checks
+
+- Runtime integrity: all 28 protected files pass.
+- TypeScript and production build pass; all four Sites worker checks pass.
+- .openai/hosting.json and the three required built hosting files exist. The existing public Site identity and audience are retained.
 
 final result: passed

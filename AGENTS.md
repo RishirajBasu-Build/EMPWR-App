@@ -113,3 +113,14 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - User response to the publication preference question: "Publish these and future Site fixes".
 - This applies to the existing EMPWR Fluid Intake Site, project appgprj_6ae34645e4f481918589d309de53eb6f. Publish completed, verified fixes to this Site without repeated conversational confirmation unless the user changes this preference.
 - Preserve the current audience and access settings. This does not authorize unrelated Sites or sharing/access changes. Native tool approvals still apply.
+
+## Medication Handoff — November 6, 2026
+
+- Integrate Medication with the existing Fluid Intake prototype through the Home cards, menu and category navigation. Preserve all Fluid Intake final-scope behavior and fixed chrome.
+- Source is Figma BMI80ChX15L7QaJ38rReU2 / Medication Final Scope / Medication handoff (326:13585). Its annotations are authoritative; medication-flow.md maps the 31 supplied states to working interactions.
+- Medication progress counts all scheduled dose occurrences across the entire day. A check-in is keyed to medication, date and time. Do not use the number of distinct medication records as the denominator.
+- Require medication name, numeric/punctuation strength, one medication type, positive dose amount, positive integer frequency and exactly that many distinct times. Upload is optional and opens the computer file chooser. Camera is presentation-only per the design annotation.
+- Conditions are removable chips; Add Condition has inline confirm/cancel. Notes use a keyboard-aware textarea. Start-date changes reset end to start; Ends Never disables end. Honor daily/selected weekdays, date ranges and reminder permission.
+- Preserve separate confirmation dialogs for deleting a medication and deleting its schedule. Schedule deletion retains the medication. Lists search name, type and conditions; every edit/reminder control must target its own record.
+- Begin with an empty medication list. The existing prototype menu offers Load medication example for a seven-dose, partially completed example, and Notification Settings to demonstrate permission-on/off states. These are in-memory prototype controls; no system notification permission or external reminder is requested.
+- Original Figma artwork and source SVG geometry take priority. User-uploaded imagery takes priority over type illustrations. Keep phone/device/status/keyboard runtime files protected.
