@@ -351,3 +351,43 @@ final result: passed
 - TypeScript/production build, all 28 protected runtime files and all nine existing domain/Sites-worker regression checks pass. Required hosting files are present. No actionable P0/P1/P2 layout finding remains for this change.
 
 final result: passed
+
+# Combined Medication + Fluid Home reminders — November 6, 2026
+
+## Source, state and comparison evidence
+
+- Figma file BMI80ChX15L7QaJ38rReU2 / Medication Final Scope / Medication handoff / Reminders (Medication+Fluid Intake). Read all four frames and their descendant annotations: 346:18784, 346:18955, 346:19290, 346:19493. Detailed code context was also read for medication sheet 346:19127 and fluid banner 346:19327. Flow mapping is in home-reminder-flow.md.
+- Source screenshots: qa/combined-reminders/source-medication.png, source-medication-sheet.png, source-fluid.png and source-fluid-sheet.png. Source is 388 × 844, except fluid banner frame 412 × 844. The source's historical date, status chrome and three illustrative dots are superseded by the runtime's live chrome, current date and two annotated current reminder types.
+- Browser viewport: 1680 × 1560 requested for 1:1 mobile QA. Verified device-screen bounds 392.997 × 851.989 CSS px for iPhone and 426.989 × 951.989 for Pixel; screenshot output is 393 × 852 / 427 × 952. Browser density is 1.1; screen clips use the measured rectangle and density. Images were compared at original font-pixel size with canvas padding, without stretching the source or changing device geometry.
+- Final implementation: iphone-medication-final.jpg, iphone-fluid-final.jpg, iphone-medication-sheet-final.jpg, iphone-fluid-sheet-final.jpg in qa/combined-reminders. Pixel evidence: pixel-medication.jpg, pixel-fluid.jpg, pixel-medication-sheet.jpg.
+- Full comparisons: pair-medication-full.png, pair-fluid-full.png and pair-fluid-sheet-full.png. Focused comparisons: pair-medication-card.png, pair-fluid-card.png, pair-medication-sheet.png and pair-fluid-sheet.png. Each comparison contains source and implementation together. Both parent and independent reviewer opened the paired evidence; no actionable P0/P1/P2 difference remains.
+
+## Findings, fixes and post-fix evidence
+
+1. P2: the fluid banner's taller inactive medication sibling created vertical scrollable overflow. Opening Log Progress could scroll the rail vertically and clip the label/icon. Set the Carousel track to height:100% and overflow:clip. Its natural slide heights remain measurable. Post-fix browser measurements: fluid rail clientHeight=scrollHeight=110, scrollTop=0, including after opening the sheet. iphone-fluid-sheet-fixed.jpg and final fluid-sheet pair show the entire background card.
+2. P2: a swipe paused before release could stop between cards. Added an observer for the protected Carousel's data-dragging completion, scheduling the same settle behavior after release. No protected gesture code was changed. Browser horizontal dragging, arrows and dots all resolve to actual category cards; source review confirms paused release also schedules alignment.
+3. P2: font shorthands reset the source OpenType settings and the Home sheet inherited slightly different teal action colors. Restored the Figma Work Sans features on reminder text and both Home sheets; matched medication action border #097259 and text #044e3d. Replaced Home close artwork with exact 9bd5e.svg at 20 px and preserved source arrow opacity at boundaries. Computed features now include ss01/ss03/ss04/ss06/zero. Final captures and pairs were regenerated after these corrections.
+
+## Required fidelity surfaces
+
+- Typography: bundled Work Sans 400/500/600, source 12/16 tags, 18/22 semibold titles, 14/20 medication description, 14/16 underlined actions and 20/24 sheet title. Source letter spacing and OpenType settings are explicit. Minor browser/font rasterization differences remain P3; no wrapping or hierarchy issue remains.
+- Spacing: shared 16 px page gutters; source medication 32 px icon with 12 px gap, fluid 36 px icon with 8 px gap; both cards use 16 px inner padding and 12 px corners. Actual banner heights are 150 and 110 px. Compact medication sheet rows and dividers follow source spacing, with five rows visible on iPhone and Pixel. Runtime safe areas and fixed header remain intact.
+- Colors: original violet #f4ecfe/#440b8e medication label, blue #ecf6fe/#0a5085 fluid label, source body/muted grays and teal controls. Existing progress ring uses the approved teal/90 token.
+- Images/icons: downloaded unmodified original 4b777.svg; reused exact source glass, close, arrow, dot, pill, dose and condition artwork. Browser confirms all visible reminder/sheet assets load, with effective 31.989 px capsule, 35.994 px glass, 13.324 px dismiss icon, 20 px sheet close, 27.997 px dose image and 5.994 px dots. No paths were redrawn or replaced by approximations. Uploaded medication imagery and the approved Liquid SVG still take priority in shared medication artwork.
+- Copy: source labels/actions retained; dose time and remaining count are dynamic. Appointments/General reminders are not fabricated: the annotation explicitly limits the current flow to Medication and Fluid Intake.
+
+## Interaction and regression evidence
+
+- Empty Home, the existing medication example and the new combined example remain available. Combined demo gives five due 9 AM doses and seven total daily doses, alongside the configured fluid reminder.
+- Medication appears first; Next/Previous, both dots and horizontal drag switch actual cards. The card window adapts from 150 px to 110 px. Vertical dragging beginning over a reminder scrolls Home (measured scrollTop 220) while its header stays fixed; normal navigation back to Home restores top position.
+- Exact due dose sheet opens with five Taken actions. Check-ins produce 1/7 and 14%, then 3/7 and 43%, with remaining count 5→4→2; Medication details also shows 3 of 7. Completing all five due doses leaves 5/7 and removes that completed group, retaining the fluid card. Open sheets retain their original dose keys while check marks update.
+- Medication dismissal leaves fluid available; fluid dismissal removes only its own card. Dismissing the last card removes the empty carousel. Restart and combined-demo reload reset dismissal state. Notification-off hides medication reminders without altering the all-day denominator or existing fluid behavior.
+- Fluid Log Progress preserves immediate saving. iPhone 5→6 gives 48oz and Home 48 ounces; Pixel input 7 gives 56oz and Home 56 ounces. Returning to Fluid Intake confirms shared totals. Keyboard dismissal and sheet close remain connected to the existing runtime.
+- Six focused reminder-selection tests cover due/future boundaries, earliest grouping, partial/full completion, per-medication/global notification eligibility and immutable exact identities. Existing medication ordering and Sites checks remain included. Browser error log is empty.
+
+## Release checks and follow-up
+
+- All 28 protected runtime files are unchanged. Production/TypeScript and all 15 existing/new domain and Sites-worker checks pass; all four required hosting output files are present.
+- P3: dates, progress data, responsive card width and device/status rendering intentionally follow the current prototype/runtime rather than the historical source mock. Long-lived cross-midnight prototype records retain the existing session-date limitation until reload; no persistence or external notifications were added.
+
+final result: passed

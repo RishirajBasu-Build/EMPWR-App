@@ -155,3 +155,41 @@
 
 /* Original Figma syrup SVG: preserve its intrinsic aspect ratio in compact slots. */
 .med-small-art img.med-liquid-image{width:auto;height:auto;transform:scale(.2857142857);flex:none}
+
+/* Combined Home reminders: Figma 346:18784 / 346:19290. */
+.home-reminder-window{width:100%;overflow:hidden;transition:height .16s ease}
+.home-reminder-rail{width:100%;height:100%}
+.home-reminder-track{gap:0;align-items:flex-start;height:100%;overflow:clip}
+.home-reminder-slide{display:flex;align-items:flex-start;flex:none;min-width:0;box-sizing:border-box;padding:16px;border-radius:12px;background:#fff;gap:8px}
+.home-reminder-medication{gap:12px}
+.home-reminder-icon{display:block;flex:none;max-width:none}
+.home-reminder-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:8px;align-items:flex-start}
+.home-reminder-main{display:flex;flex-direction:column;gap:8px;width:100%;min-width:0}
+.home-reminder-medication .home-reminder-main{gap:4px}
+.home-reminder-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
+.home-reminder-heading .reminder-tag{margin:0;white-space:nowrap}
+.home-reminder-medication .reminder-tag{background:#f4ecfe;color:#440b8e}
+.empwr-app .home-reminder-dismiss{display:grid;place-items:center;width:24px;height:24px;min-width:24px;background:#fff;flex:none}
+.home-reminder-main strong{display:block;font:600 18px/22px 'Work Sans',sans-serif;letter-spacing:-.5px;color:#535b5a;overflow-wrap:anywhere}
+.home-reminder-main p{font:400 14px/20px 'Work Sans',sans-serif;letter-spacing:0;color:#6e7776;margin:0}
+.empwr-app .home-reminder-fluid-title{display:block;width:100%;text-align:left}
+.home-reminders .banner-arrow:disabled{cursor:default}
+.bottom-sheet:has(.home-medication-dose-sheet) .sheet-header{height:61px;display:flex;align-items:center;margin:0 var(--page-gutter);padding:16px 0 8px;border-bottom:1px solid #f4f5f5}
+.bottom-sheet:has(.home-medication-dose-sheet) .sheet-title{padding-right:36px}
+.bottom-sheet:has(.home-medication-dose-sheet) .sheet-content{padding:10px var(--page-gutter) 32px}
+.home-medication-dose-sheet{display:flex;flex-direction:column;gap:16px}
+.home-medication-dose-sheet>.sheet-close{width:36px;height:36px;top:16px!important}
+.home-medication-dose-sheet>.sheet-close img{width:20px;height:20px}
+.home-medication-dose-sheet .med-dose-row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;min-height:0;padding:4px 0;border:0}
+.home-medication-dose-sheet .med-dose-row+.med-dose-row{border-top:1px solid #eaebeb;padding-top:20px}
+.home-medication-dose-sheet .med-compact-name{grid-column:1;grid-row:1}
+.home-medication-dose-sheet .med-dose-action{grid-column:2;grid-row:1/4;position:static;align-self:center}
+.home-medication-dose-sheet .med-compact-meta{grid-column:1;grid-row:2;padding-right:0;flex-wrap:wrap}
+.home-medication-dose-sheet .med-dose-note{grid-column:1;grid-row:3;padding-right:0}
+/* Preserve the source Work Sans numeral and stylistic features after font shorthands. */
+:is(.home-reminders,.home-medication-dose-sheet,.home-progress-fields),
+:is(.home-reminders,.home-medication-dose-sheet,.home-progress-fields) *,
+.bottom-sheet:has(:is(.home-medication-dose-sheet,.home-progress-fields)) .sheet-title{font-feature-settings:'zero' 1,'ss03' 1,'ss06' 1,'ss01' 1,'ss04' 1}
+.home-reminders .banner-arrow:disabled{opacity:1}
+.home-medication-dose-sheet .med-dose-action>.outline-button{border-color:#097259!important;color:#044e3d!important}
+.home-medication-dose-sheet .med-compact-name strong{color:#000}
