@@ -129,9 +129,9 @@
 .phone-device[data-platform=android] .setup-footer::after{display:none}
 .med-small-art{border-color:#0ac25a}.med-dose-art img:not([src$='.svg']){width:28px;height:28px}
 
-/* Shared page gutter: match the category tabs without doubling nested padding. */
-:is(.empwr-app,.bottom-sheet,.med-confirm){--page-gutter:24px}
-.health-category-header .category-track,
+/* Shared 16px page gutter, applied once per outer content surface. */
+:is(.empwr-app,.bottom-sheet,.med-confirm){--page-gutter:16px}
+.health-category-header .category-track,.emp-header .nav-row,
 .home-content,.home-header,.details-content,.setup-content,
 .med-dashboard,.med-wizard-content,.medication-full-list,
 .setup-footer,.med-titlebar,.med-form-progress{padding-inline:var(--page-gutter)}

@@ -134,7 +134,7 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 
 ## Shared horizontal spacing — November 6, 2026
 
-- Use the category tabs' 24 px left/right padding as the shared page gutter throughout Home, Medication, Fluid Intake, setup/edit forms, full lists, fixed action footers and bottom sheets. Keep the gutter in one CSS variable, `--page-gutter`.
+- Latest user correction: use 16 px left/right padding throughout the app, including category tabs, navigation rows, Home, Medication, Fluid Intake, setup/edit forms, full lists, fixed action footers and bottom sheets. This supersedes the earlier 24 px horizontal rule. Keep the gutter in one CSS variable, `--page-gutter`; all existing and future category pages should use it.
 - Apply the page gutter once. Reset direct dashboard/detail sections' horizontal padding when their main container owns it; retain internal card/control spacing and protected device chrome.
 - Time chips may wrap to fewer columns when necessary to retain readable text and complete edit/remove controls inside the shared gutter. Preserve all functionality and the existing 24 px top margin above medication progress.
 

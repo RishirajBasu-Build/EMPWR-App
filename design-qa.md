@@ -341,3 +341,13 @@ final result: passed
 - Runtime integrity passes for all 28 protected files. TypeScript/production build and all nine existing domain/Sites-worker checks pass. All required hosting output files are present. No new test was needed for this asset-only correction, and no actionable P0/P1/P2 mismatch remains in scope.
 
 final result: passed
+
+# 16 px app-wide page padding — November 6, 2026
+
+- Latest user instruction explicitly changes the shared left/right page padding to 16 px, superseding the earlier 24 px horizontal request. Updated the single --page-gutter value and brought both health/reminder navigation rows onto that same variable. Existing main pages, category tabs, wizard headings/progress, fixed action footers, sheets, dialogs and toast edges inherit the new value. Nested card/control spacing remains independent.
+- Browser computed padding-left and padding-right are exactly 16 px on Home/header, Medication dashboard, full medication list, medication wizard, wizard title/progress, Fluid Intake details, reminder setup/footer and time-picker sheet header/content. Pixel dashboard/list and Fluid Intake also measure 16 px on each side. Measurements are saved in qa/gutter-16/measurements.json.
+- Main clientWidth equals scrollWidth at both 393 px iPhone and 427 px Pixel presets. Category rails retain their intended horizontal carousel behavior. Existing 24 px progress top spacing, original liquid SVG, typography and protected device geometry remain intact.
+- Reviewed screenshots in qa/gutter-16: iphone-medication-list.jpg, iphone-fluid.jpg, iphone-time-sheet.jpg, pixel-fluid.jpg and pixel-medication-list.jpg. Page edges, tabs, fields and fixed action buttons align consistently. Category navigation, list/form opening and sheet opening/closing still work. Browser error log is empty.
+- TypeScript/production build, all 28 protected runtime files and all nine existing domain/Sites-worker regression checks pass. Required hosting files are present. No actionable P0/P1/P2 layout finding remains for this change.
+
+final result: passed
