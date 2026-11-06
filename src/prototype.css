@@ -77,3 +77,16 @@
 .upcoming-bell{position:relative;display:block;overflow:hidden;flex:none;width:20px;height:20px}.upcoming-bell img{position:absolute;left:.1667px;top:.1667px}
 .hero-info:has(.today-total[data-wide=true]){gap:16px}.today-total[data-wide=true]{display:flex;flex-wrap:nowrap;height:44px;min-height:44px;gap:8px}.today-total>span,.today-total strong{white-space:nowrap;flex:none}.today-total[data-wide=true]>span{font-size:16px;line-height:19.2px}.today-total[data-wide=true] .today-clock{width:14.4px;height:14.4px}.today-total[data-wide=true] .today-clock img{width:13.2px;height:13.2px}.today-total[data-wide=true] strong{font-size:20px;line-height:24px}
 .reading-editor{display:flex;flex-direction:column;gap:12px}.reading-editor-fields{display:flex;flex-direction:column;gap:8px}.bottom-sheet .reading-editor-fields .field-label{margin:0}.bottom-sheet .reading-editor-fields .helper{margin:0!important}.bottom-sheet .reading-editor>.primary-button{margin:0}
+
+/* Fixed app chrome and scroll-position cues. Keep device artwork unchanged. */
+.home-content{padding-top:0}.home-header{height:52px;padding:12px 16px 16px;background:#f4f5f5}.home-header .home-toolbar{margin:0}
+.empwr-app .flow-fixed-header:has(.home-header){background:#f4f5f5}
+.empwr-app .flow-fixed-header{box-shadow:none;transition:box-shadow 160ms ease}
+.empwr-app .flow-fixed-header:has([data-scrolled=true]){box-shadow:0 3px 8px rgba(0,0,0,.09)}
+.device-screen:has(.empwr-app) .status-bar{background:#fff}
+.device-screen:has(.home-header) .status-bar{background:#f4f5f5}
+.device-screen:has(.empwr-app) .home-indicator-svg{left:0;right:0;width:100%;background:#fff;box-shadow:none;transition:box-shadow 160ms ease}
+.device-screen:has(.home-header) .home-indicator-svg{background:#f4f5f5}
+.device-screen:has(.flow-fixed-header [data-more-below=true]) .home-indicator-svg{box-shadow:0 -4px 12px rgba(0,0,0,.1)}
+.device-screen:has(.empwr-app):has(.bottom-sheet) .home-indicator-svg{background:#fff;box-shadow:none}
+.device-screen:has(.keyboard-dock[data-visible=true]) .home-indicator-svg{background:transparent;box-shadow:none}

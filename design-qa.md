@@ -194,3 +194,36 @@ final result: passed
 - Browser warning/error log empty. TypeScript, 28-file runtime integrity, production build and four Sites worker tests pass. Existing chunk-size advisory is unchanged.
 
 final result: passed
+
+# Fixed chrome browser comments — November 6 follow-up
+
+final result: passed
+
+## Evidence and comparison
+- Source: the three latest user browser comments and marked screenshots, plus the existing version 5 Site for the unchanged app styling. No Figma assets or device artwork changed.
+- Combined source/implementation evidence opened and reviewed: `qa/scroll-chrome/home-scrolled-comparison.png` and `qa/scroll-chrome/details-scrolled-comparison.png`. Before files capture the prior live Site; after files capture the local implementation with the same 5-glass / 40oz data and no saved reminder. The Home scrolled comparison shows the intended change in content viewport after reserving the fixed toolbar.
+- Additional implementation evidence: `home-top.jpg`, `home-scrolled.jpg`, `details-top.jpg`, `details-scrolled.jpg`, `details-end.jpg`, `pixel-home-scrolled.jpg`, `pixel-details-scrolled.jpg` in `qa/scroll-chrome/`.
+- iPhone screen captures are 393 × 852 at 1:1 CSS density. The local browser reports 392.997 × 851.989 CSS px, DPR 1.1, viewport 1527 × 1418 CSS px. Clip coordinates multiplied by DPR. The baseline browser is 1680 × 1560 at DPR 1, screen 393 × 852; its full detail screenshot was cropped to the observed screen rectangle. Initial scaled/blank baseline captures were discarded and are not used as evidence. Pixel captures are 427 × 952.
+- Source and implementation use live status clocks, so capture times differ. Device bezel/camera/cursor and JPEG antialiasing are template infrastructure; they are not app visual findings.
+
+## Findings resolved / comparison history
+- P1, comment 1: Home toolbar lived inside the scrolling content, and content showed beneath the transparent status region. Moved the existing toolbar into FlowScreen.header (52 px plus runtime safe-area inset), preserved the original starting layout, and used opaque route-colored top surfaces. Home header's measured top remained 337.074 px before/after scrolling on iPhone and 297.088 px on Pixel. The before/after Home comparison shows the toolbar staying fixed and content being masked below it.
+- P2, comment 2: there was no depth cue beneath the fixed header. The app observes the active MobileScroll and adds a 0 3px 8px rgba(0,0,0,.09) shadow only above scrollTop 1. Verified no shadow at the top, visible shadow after scrolling in Home/details, and fixed positions on both devices.
+- P2, comment 3: home-indicator SVG was transparent around the pill, allowing content behind it to remain visible. Added an opaque app-colored background to its full width, preserving its SVG and geometry. Measured left offset 0 and width 392.997 px, exactly the screen width. An upward 0 -4px 12px rgba(0,0,0,.1) shadow indicates content below; at the end (scrollTop 201.818 / max 202) moreBelow becomes false and the shadow clears.
+- Modal specificity was checked so its white indicator surface clears the scroll shadow. While the keyboard is open the indicator background is transparent and shadow none, preserving keyboard artwork/layers. No actionable P0/P1/P2 finding remains after the final comparisons.
+
+## Required fidelity surfaces
+- Typography: all existing bundled fonts, font sizes, line heights, copy and date formatting retained. Only the toolbar's ownership changes; its children keep their existing styling.
+- Spacing: Home fixed header is 52 px with original 12 px top / 16 px side / 16 px bottom spacing; runtime supplies platform status height. Content no longer duplicates this top inset. Original card gutters/gaps and all detail/form geometry retained.
+- Colors: opaque #f4f5f5 Home chrome, white detail/setup chrome, subtle black shadows at 9–10% opacity. Sheet white and keyboard transparency override the scrolling surface.
+- Assets: original status, camera, bezel, navigation and home-indicator assets remain; no duplicate device chrome, substitute icons or generated art. All 28 protected runtime files unchanged.
+- Content: all prior intake, reminder, chart and editor text unchanged. Original scrolling and in-memory data behavior retained.
+
+## Browser and production checks
+- Home scrolls to later activities while its menu/date remain fixed. Menu still opens and navigates to Fluid Intake. Details/chart scrolls and back navigation remain functional.
+- Header/indicator flags update with native scrolling and with content/container resizing. At scroll start the header shadow is absent; while scrolling it appears; the lower shadow clears at the end.
+- Full-width indicator background and shadows visible in combined comparisons; Pixel keeps its original black navigation area and fixed camera/status assets.
+- Reading editor opens, its indicator surface is white with no extra shadow, and focusing its input preserves the keyboard safe area; close dismisses normally.
+- Browser warning/error log empty. TypeScript, runtime integrity, production build and all four Sites worker tests pass. Existing build chunk-size advisory remains.
+
+final result: passed

@@ -2,7 +2,7 @@
 
 ## Prototype Instructions
 
-In ChatGPT Work Mode, run `sites-preview start "$PWD"`, open `http://terminal.local:4173/` in the cloud browser, and verify the rendered app and its primary interactions. Keep that preview open and tell the user to inspect it in the cloud browser; do not present the local URL as a user-facing chat link. In Codex Desktop, run the local server yourself, open the preview in the in-app browser, and provide the clickable local URL. Do not deploy to Sites unless the user explicitly asks to share, publish, or deploy. Do not give the user server-start instructions when you can run it.
+In ChatGPT Work Mode, run `sites-preview start "$PWD"`, open `http://terminal.local:4173/` in the cloud browser, and verify the rendered app and its primary interactions. Keep that preview open and tell the user to inspect it in the cloud browser; do not present the local URL as a user-facing chat link. In Codex Desktop, run the local server yourself, open the preview in the in-app browser, and provide the clickable local URL. For this EMPWR Fluid Intake Site, the user explicitly authorized publishing these and future Site fixes on November 6, 2026. Publish verified fixes to this same Site without asking again, preserving its current audience. This standing authorization supersedes the template default requiring a new publish request for each release. Do not give the user server-start instructions when you can run it.
 
 Before planning or implementing any mobile-app change, read this `AGENTS.md` in full. It is the source of truth for the template's runtime and component guidance.
 
@@ -100,3 +100,16 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Reading editor groups label, counter and helper with 8 px internal gaps, then separates Save Reading by exactly 12 px.
 - Today total must always use one line. For large values, expand its space by reducing the hero gap, scale Today and its clock to 80%, and retain the volume's readable size. Never switch the pill to a two-row layout.
 - Graph circles must be fully visible at the maximum, zero and both horizontal endpoints. Retain headroom, canvas padding and unclipped point drawing.
+
+## Fixed chrome review — November 6, 2026
+
+- Home navigation (menu, date, map/profile) belongs in FlowScreen.header, with 52 px app header height; the runtime supplies the status inset. Keep greeting/cards inside MobileScroll.
+- Keep status/header surfaces opaque so scrolling content passes behind them. A subtle downward header shadow appears only after scrolling above the starting position.
+- The iOS home-indicator area has an opaque full-width background and a subtle upward shadow while more content remains below. Clear the shadow at the end of the content. Preserve the original indicator SVG and all device geometry.
+- Sheets use their own white safe-area surface without the scroll shadow; the keyboard retains its existing transparent safe-area layering. Preserve the Pixel navigation asset.
+
+## Standing publication authorization — November 6, 2026
+
+- User response to the publication preference question: "Publish these and future Site fixes".
+- This applies to the existing EMPWR Fluid Intake Site, project appgprj_6ae34645e4f481918589d309de53eb6f. Publish completed, verified fixes to this Site without repeated conversational confirmation unless the user changes this preference.
+- Preserve the current audience and access settings. This does not authorize unrelated Sites or sharing/access changes. Native tool approvals still apply.

@@ -27,3 +27,11 @@ All seven New Final Scope annotation occurrences are covered, including duplicat
 | 5 | Label/counter/helper form one group; Save Reading follows with 12 px separation. |
 | 7 | Large Today totals remain on one line, with an expanded pill and proportional label/clock reduction. |
 | 8 | Add chart headroom/padding and disable dataset clipping so circles remain whole. |
+
+## Fixed chrome browser comments — November 6 follow-up
+
+| Comment | Implemented fix |
+| --- | --- |
+| 1 | Move the Home navigation into the fixed FlowStack header below the existing status bar; scrolling content stays beneath opaque chrome. |
+| 2 | Show a subtle header shadow only when the active screen has been scrolled. |
+| 3 | Use a full-width opaque iOS home-indicator background, with an upward shadow while additional content remains below. |
