@@ -131,3 +131,9 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Pending times use two ascending groups: all remaining times at or after the current time, then all earlier unlogged times. At 2 PM, 8 AM / 9 AM / 3 PM / 9 PM display as 3 PM / 9 PM / 8 AM / 9 AM. Reevaluate the order as the current minute changes.
 - The progress ring and its teal percentage use Base `base/color/teal/90` (Figma VariableID:69:2715), resolved as #097259. Chart drawing and CSS text share the `--base-color-teal-90` token.
 - Medication and Fluid Intake use the same 84 px category header: Medication, Fluid Intake, Appointments, Steps, Calories, Exercise, Sleep, Meditation. Preserve identical spacing and geometry; only the active category differs. Reminder setup retains its separate header.
+
+## Shared horizontal spacing — November 6, 2026
+
+- Use the category tabs' 24 px left/right padding as the shared page gutter throughout Home, Medication, Fluid Intake, setup/edit forms, full lists, fixed action footers and bottom sheets. Keep the gutter in one CSS variable, `--page-gutter`.
+- Apply the page gutter once. Reset direct dashboard/detail sections' horizontal padding when their main container owns it; retain internal card/control spacing and protected device chrome.
+- Time chips may wrap to fewer columns when necessary to retain readable text and complete edit/remove controls inside the shared gutter. Preserve all functionality and the existing 24 px top margin above medication progress.

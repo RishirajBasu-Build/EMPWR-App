@@ -128,3 +128,27 @@
 /* Android already reserves its navigation area outside the app viewport. */
 .phone-device[data-platform=android] .setup-footer::after{display:none}
 .med-small-art{border-color:#0ac25a}.med-dose-art img:not([src$='.svg']){width:28px;height:28px}
+
+/* Shared page gutter: match the category tabs without doubling nested padding. */
+:is(.empwr-app,.bottom-sheet,.med-confirm){--page-gutter:24px}
+.health-category-header .category-track,
+.home-content,.home-header,.details-content,.setup-content,
+.med-dashboard,.med-wizard-content,.medication-full-list,
+.setup-footer,.med-titlebar,.med-form-progress{padding-inline:var(--page-gutter)}
+.details-content>.entry-section,.details-content>.intake-chart,
+.details-content>.readings-section,.details-content>.schedule-section,
+.med-dashboard>.med-progress,.med-dashboard>.med-schedule-list,
+.med-dashboard>.med-panel-wrap{padding-inline:0}
+.details-content>.intake-chart>.chart-month{left:0}
+.med-dashboard>.med-notification-warning{margin-inline:0}
+.bottom-sheet .sheet-header,.bottom-sheet .sheet-content,
+.bottom-sheet:has(.home-progress-fields) .sheet-content,
+.bottom-sheet:has(.med-dose-sheet) .sheet-header,
+.bottom-sheet:has(.med-dose-sheet) .sheet-content{padding-inline:var(--page-gutter)}
+.bottom-sheet:has(.home-progress-fields) .sheet-header{margin-inline:var(--page-gutter);padding-inline:0}
+.bottom-sheet .sheet-close,.bottom-sheet .home-progress-close,
+.med-dose-sheet>.sheet-close{right:var(--page-gutter)!important}
+.med-confirm,.emp-toast{left:var(--page-gutter);right:var(--page-gutter)}
+.time-grid{grid-template-columns:repeat(auto-fit,minmax(116px,1fr))}
+.med-dose-times .time-chip{width:auto;flex:1 0 116px}
+.med-weekdays{gap:4px}

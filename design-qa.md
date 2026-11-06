@@ -2,6 +2,8 @@
 
 final result: passed
 
+
+
 ## Source and evidence
 - Figma file BMI80ChX15L7QaJ38rReU2, Fluid Intake Final Scope, Fluid Intake section.
 - Baseline detail frame 238:1939; reminder frame 238:3471. Other inspected states include Home 238:1615 / 238:2874, selected days 238:3575, active schedule 238:1726 and sheet 238:2101.
@@ -313,5 +315,18 @@ final result: passed
 - Pixel check: progress margin 24px, teal rgb(9, 114, 89), header 83.991px, screen overflow 0. Fluid counter still updates 40oz → 48oz, and switching categories retains medication progress. Browser warning/error log is empty.
 - Fonts, source assets, form fields, dose check-in, fixed chrome and Fluid Intake data behavior remain intact. No new asset or device-runtime change was needed. No actionable P0/P1/P2 issue remains in these four corrections.
 - Runtime integrity passes for all 28 protected files; TypeScript/production build and all nine focused-domain/Sites-worker checks pass.
+
+final result: passed
+
+# Shared page gutters — November 6, 2026
+
+- Source: the user's marked medication dashboard screenshot and request to match the category tabs' padding throughout the app. The established category track has 24 px horizontal padding.
+- Replaced mixed outer 12/16/20 px margins with a shared `--page-gutter: 24px`. Main page containers, navigation/form progress rows, fixed action footers, sheets and confirmation/toast edges share it. Direct dashboard/details sections do not add a second gutter. Internal card/control spacing remains independent.
+- Browser measurements: Home, Medication dashboard, medication wizard, full medication list, Fluid Intake details, reminder setup and sheet content compute to 24 px horizontal padding. Main clientWidth equals scrollWidth at iPhone 393 px and Pixel 427 px. Internal medication title/actions and cards fit without horizontal overflow.
+- iPhone screenshots reviewed: qa/shared-gutter/iphone-medication-expanded.jpg, iphone-medication-form.jpg, iphone-medication-dose-form.jpg, iphone-medication-schedule.jpg, iphone-medication-review.jpg, iphone-medication-list.jpg, iphone-medication-dose-sheet.jpg, iphone-home-populated.jpg, iphone-fluid-large-total.jpg, iphone-fluid-reminder.jpg, iphone-fluid-calendar.jpg, iphone-fluid-reading-sheet.jpg and iphone-fluid-quick-log.jpg.
+- Pixel screenshots reviewed: qa/shared-gutter/pixel-home.jpg, pixel-medication.jpg, pixel-fluid.jpg and pixel-fluid-reminder.jpg. Original status/navigation/device geometry remains intact.
+- Responsive chip layout retains complete 14 px monospaced labels and remove controls: two columns on iPhone, three on Pixel for the fluid reminder; medication dose chips wrap naturally. All seven weekday controls fit on iPhone.
+- Medication editing through all details/schedule/review stages still saves the same medication. Fluid reminder creation and reading editing still save correctly. Home quick logging opens with aligned title/counter; large 8000oz Today total remains on one line and graph points remain visible. Prior progress margin, dose ordering, source teal and fixed chrome behavior are preserved. Browser error log is empty.
+- No actionable P0/P1/P2 layout issue remains in this spacing change. TypeScript/production build pass; all 28 protected runtime files and all nine existing domain/Sites-worker regression checks pass. All four required hosting files exist.
 
 final result: passed
