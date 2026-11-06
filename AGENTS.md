@@ -82,3 +82,12 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Log Progress opens the phone-scoped Fluid Intake bottom sheet from 278:7910 over dimmed Home. Include the Today glass/ounce total, shared counter, 8 US fluid ounce helper, and close control. Changes apply immediately to today's shared reading; there is no extra Save step in this design.
 - Keep the existing 0–1000 limits and decimal entry. Closing or reopening retains progress during the session; Home, details, recent readings and chart must agree.
 - Keyboard keys are outside the sheet portal. Keep the sheet open during keyboard interactions, dismiss the keyboard on outside-input taps, and close it with the sheet. Preserve runtime files.
+
+## New Final Scope — November 6, 2026 (supersedes earlier display rules)
+
+- Use the New Final Scope annotations in Figma BMI80ChX15L7QaJ38rReU2 / Fluid Intake Final Scope / Fluid Intake as the current source of truth.
+- Glass counts remain the editable data (0–1000, decimal entry). Display ounces only: Home `40 ounces`, details and quick-log Today `40oz`, recent readings `40 oz`, and chart values in ounces. Convert every value by multiplying glasses by 8.
+- Use the current Home activity arrangement from the final Figma frames and the helper `Each glass counts as 8 fluid ounces.`
+- Reminder summary adapts to repeat days, start and finite end dates. Always retain `To change it, go to advanced settings.` as its second sentence.
+- New reminders start today and initially end on that same day. Every change to start date resets end date to the new start date, even if the old end date was later. Ends Never disables end-date entry.
+- Resolve today in the client's Asia/Kolkata timezone, with recent readings and chart dates following it. Keep the existing in-memory prototype behavior and protected mobile runtime.

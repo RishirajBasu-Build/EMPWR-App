@@ -120,3 +120,47 @@ final result: passed
 - Existing prototype state remains in memory and resets on reload. Reminder scheduling remains a demonstration.
 
 final result: passed
+
+# New Final Scope — November 6, 2026
+
+final result: passed
+
+## Source, state and evidence
+- Source: Figma BMI80ChX15L7QaJ38rReU2, page 221:1109 / section 238:1614. Every annotation inspected; implementation trace is in `final-scope.md`.
+- Source visuals: `qa/nov6/figma-details.png` (392 × 848), `figma-home.png` (412 × 844), `figma-sheet.png` (388 × 251) and `figma-setup.png` (392 × 991).
+- Rendered iPhone: `qa/nov6/details-final.jpg`, `home-final.jpg`, `sheet-final.jpg`, `setup-final.jpg`, each 393 × 852. Matching default intake is 5 glasses / 40 ounces. Home has a saved default reminder; sheet keyboard is closed. Reminder configuration shows Advanced Settings with both initial dates equal to today.
+- Combined source/render comparisons opened and inspected: `qa/nov6/details-final-comparison.png`, `home-final-comparison.png`, `sheet-final-comparison.png`, `setup-final-comparison.png`. Sheet comparison is focused on its 251 px content, excluding the protected 34 px iOS safe area. Full Home/sheet proof: `qa/nov6/final-flow.jpg`.
+- Viewport 1527 × 1418 CSS px, reported DPR 1.1. Phone measures 392.997 × 851.989 CSS px. Screenshot coordinates multiplied by DPR yield an unscaled 393 × 852 image. Sources and captures shown at 1:1 CSS density. The 412 px Home and 991 px tall reminder source adapt to the protected runtime without scaling font/control sizes; expanded settings remain scrollable above the footer.
+- Additional Pixel evidence: `qa/nov6/pixel-sheet.jpg`, 427 × 952. Protected Android camera and bottom navigation remain visible; all sheet controls fit.
+- Dates are live in the client timezone (November 6 during verification), instead of Figma's illustrative September/April dates. Graph uses actual shared readings converted to ounces; the illustrative Figma graph points conflict with its own 5-glass Today value and therefore are not hardcoded. The existing sample readings are retained. Month-crossing dates label Oct 31 / Nov 1 explicitly.
+- The finite default end date now appears in the adaptive summary, even though the source screenshot's example summary omits it. This follows the explicit annotation to reflect Advanced Settings. The final helper sentence is unchanged.
+
+## Findings and comparison history
+- Initial detail comparison `qa/nov6/details-initial-comparison.png` found P2 Set Reminders border/color drift. Applied source teal styling and exact add SVG, recaptured in the final combined detail evidence.
+- P2: graph month-range label overlapped the first day when spanning October/November. Replaced the floating range label with explicit month-boundary tick labels; final detail comparison shows clear labels.
+- P2: initial reminder render showed content beneath the footer in the home-indicator safe area. Extended the app footer background through its safe area; final setup comparison shows a clean footer and indicator region.
+- P2: Ends Never appeared as a square native checkbox instead of the source circle. Kept the native labeled input, overlaid the exact source unchecked SVG and existing checked icon, and verified checked/disabled behavior after the fix.
+- P2: the newly displayed Medications card was 5 px taller than the source. Applied its source 124 px height, then recaptured and compared Home. Other standard cards retain 129 px, Calories 124 px.
+- Updated exact clock/edit/add SVG slots, latest white selected-repeat surface, and source helper copy. No actionable P0/P1/P2 findings remain after the final comparisons.
+
+## Required fidelity surfaces
+- Fonts: bundled Work Sans remains the app font; source Today 20/24 medium, sheet numeric total/input 24/28 medium, Home metric 18/22 medium and reading value 16/20 regular. IBM Plex Mono time/date fields remain. Protected device typography is preserved.
+- Spacing: 20 px detail gutters; source 40 px hero gap; 48 px glass counter; 16 px sheet gutters, 20 px gaps, 47 px total pill and 32 px bottom content padding plus platform safe area. Home uses 16 px card gaps and source card heights. Source reminder fields retain 8 px gaps.
+- Colors: source teal controls/action text, gray ounce labels, white sheet, 40% backdrop, blue summary information panel, white selected repeat card and green selected border. Disabled counter and end-date states remain distinct.
+- Images/icons: source Home photos and SVGs are local. New originals include Appointments photo, appointment icon, zero-progress arc, exact Today clock, Set Reminders add and unchecked Ends Never circle. Reading edit icon uses its exact 12.667 px source asset in a 16 px slot. Home chevrons retain intrinsic 20 × 18 dimensions. Browser found no unloaded app images. No generated or handcrafted replacements.
+- Copy/content: Home uses ounces, Today uses oz without parentheses/glass count, readings use oz, graph uses ounces, helper matches current design. Advanced summary includes days/date range and the permanent second sentence. Current date replaces obsolete demo today.
+
+## Interaction and validation evidence
+- Detail plus: 5 → 6 glasses updates Today and reading to 48oz / 48 oz and latest graph point to 48. Manual 8.5 gives 68oz.
+- Input 1001 clamps to 1000 / 8000oz, plus disabled, no Today pill overflow. Zero gives 0oz and disables minus.
+- Recent-reading keyboard input changes yesterday from 15 to 4 glasses; saved row becomes 32 oz and chart point becomes 32. Only three most recent rows expose edit buttons. Sheet remains open while using the simulated keyboard.
+- New reminder dates initially both 11/06/2026. Extended end to 11/20, then changed start to 11/10: both became 11/10. Ends Never disabled end entry and removed the finite end from the summary.
+- Selected days update the summary (Monday, Tuesday, Wednesday, Friday tested); the fixed second sentence remains present. Saving a daily never-ending reminder returns to details and exposes Home Log Progress.
+- Home on-screen keyboard input 8 gives 64oz in sheet and 64 ounces on Home. Outside-input helper tap dismisses keyboard while preserving sheet. Close dismisses both. Pixel number 6 gives 48oz, stays open while typing and appears as 48 ounces on Home; reminder title opens details with 48oz and matching chart data.
+- Browser warning/error log empty. No unloaded app assets. Runtime integrity passes for all 28 protected files, TypeScript and production build pass, four Sites worker tests pass. Expected pre-existing build chunk-size advisory remains.
+
+## Remaining limits
+- P3: template-owned bezel, cursor, camera, live status clock and JPEG capture softness differ from the flat Figma export. These do not alter app-owned control sizes. Adjacent non-Fluid activities are visual context.
+- Prototype state remains in memory and resets on reload. Reminder scheduling remains a demonstration, as before.
+
+final result: passed
