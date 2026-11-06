@@ -68,3 +68,12 @@
 .setup-footer{position:relative}.setup-footer::after{content:'';position:absolute;left:0;right:0;top:100%;height:var(--device-safe-area-bottom,34px);background:#fff;pointer-events:none}
 .ends-never-control{position:relative;display:grid;place-items:center;width:18px;height:18px;color:#097259}.ends-never-control input{position:absolute;inset:0;width:18px;height:18px;opacity:0;cursor:pointer}.ends-never-control:has(input:focus-visible){outline:2px solid #089b79;outline-offset:3px;border-radius:50%}
 .activity-medications,.activity-medications .activity-photo{height:124px}
+
+/* Browser feedback: unobstructed scrolling, compact totals, and grouped editing. */
+.empwr-app .mobile-scrollbar,.empwr-app .mobile-carousel-scrollbar{display:none}
+.empwr-app .mobile-scroll,.bottom-sheet .sheet-content{scrollbar-width:none}
+.empwr-app .mobile-scroll::-webkit-scrollbar,.bottom-sheet .sheet-content::-webkit-scrollbar{display:none}
+.empwr-app .upcoming{gap:8px;padding:8px;border-radius:4px;background:#ecf6fe;letter-spacing:0;white-space:nowrap}
+.upcoming-bell{position:relative;display:block;overflow:hidden;flex:none;width:20px;height:20px}.upcoming-bell img{position:absolute;left:.1667px;top:.1667px}
+.hero-info:has(.today-total[data-wide=true]){gap:16px}.today-total[data-wide=true]{display:flex;flex-wrap:nowrap;height:44px;min-height:44px;gap:8px}.today-total>span,.today-total strong{white-space:nowrap;flex:none}.today-total[data-wide=true]>span{font-size:16px;line-height:19.2px}.today-total[data-wide=true] .today-clock{width:14.4px;height:14.4px}.today-total[data-wide=true] .today-clock img{width:13.2px;height:13.2px}.today-total[data-wide=true] strong{font-size:20px;line-height:24px}
+.reading-editor{display:flex;flex-direction:column;gap:12px}.reading-editor-fields{display:flex;flex-direction:column;gap:8px}.bottom-sheet .reading-editor-fields .field-label{margin:0}.bottom-sheet .reading-editor-fields .helper{margin:0!important}.bottom-sheet .reading-editor>.primary-button{margin:0}

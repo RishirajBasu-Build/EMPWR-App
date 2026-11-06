@@ -15,3 +15,15 @@ Source: Figma BMI80ChX15L7QaJ38rReU2, page 221:1109, section 238:1614. Reviewed 
 Visual sources: details 238:1939 / 238:1726, Home 238:1615 / 238:2874, Home sheet 278:8080 and reminder 322:12771. The latest Home card arrangement, local SVGs, button styling, spacing and ounce typography are implemented from those design contexts.
 
 All seven New Final Scope annotation occurrences are covered, including duplicate requirements on repeated screens and the content-only field marker. Also applied the two detailed reminder annotations on the new reminder frame. Existing counter limits, one-reminder rule, keyboard handling, navigation and last-three-reading edit rule remain functional.
+
+## Browser comments — November 6 follow-up
+
+| Comment | Implemented fix |
+| --- | --- |
+| 1, 6 | Hide Home, details, settings, carousel and sheet scroll indicators without disabling scrolling. |
+| 2 | Upcoming reminder time has no date, weekday or Tomorrow prefix. |
+| 3 | Use exact blue Figma bell-ring asset and original 20 px slot styling. |
+| 4 | New reminder is daily from today with no end date; summaries adapt only to chosen settings. All seven selected weekdays read daily. |
+| 5 | Label/counter/helper form one group; Save Reading follows with 12 px separation. |
+| 7 | Large Today totals remain on one line, with an expanded pill and proportional label/clock reduction. |
+| 8 | Add chart headroom/padding and disable dataset clipping so circles remain whole. |

@@ -91,3 +91,12 @@ When any text-entry control loses focus, dismiss the simulated keyboard. If the 
 - Reminder summary adapts to repeat days, start and finite end dates. Always retain `To change it, go to advanced settings.` as its second sentence.
 - New reminders start today and initially end on that same day. Every change to start date resets end date to the new start date, even if the old end date was later. Ends Never disables end-date entry.
 - Resolve today in the client's Asia/Kolkata timezone, with recent readings and chart dates following it. Keep the existing in-memory prototype behavior and protected mobile runtime.
+
+## Browser feedback — November 6, 2026
+
+- Hide every visible app scrollbar while preserving native scrolling and gestures; apply app CSS overrides without editing the protected runtime.
+- Upcoming intake banner shows only the scheduled time, even for future-day reminders. Use Figma 238:1789's blue ringing-bell SVG 9cf3a.svg at its intrinsic 19.6667 × 18.8333 size inside the original 20 px slot, with source padding/gap/colors.
+- New reminders default to daily, starting today, with no end date. End's stored value remains equal to start, ready for a finite range when Ends Never is unchecked. Seven selected weekdays are described as daily; a subset still lists its days. Keep changed Advanced Settings when editing an existing reminder.
+- Reading editor groups label, counter and helper with 8 px internal gaps, then separates Save Reading by exactly 12 px.
+- Today total must always use one line. For large values, expand its space by reducing the hero gap, scale Today and its clock to 80%, and retain the volume's readable size. Never switch the pill to a two-row layout.
+- Graph circles must be fully visible at the maximum, zero and both horizontal endpoints. Retain headroom, canvas padding and unclipped point drawing.

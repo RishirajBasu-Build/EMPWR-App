@@ -164,3 +164,33 @@ final result: passed
 - Prototype state remains in memory and resets on reload. Reminder scheduling remains a demonstration, as before.
 
 final result: passed
+
+# Browser comments follow-up — November 6, 2026
+
+final result: passed
+
+## Source, comparison and density
+- User browser comments 1–8 and their attached marked screenshots define these scoped edits. Figma upcoming banner node 238:1789 is the SVG/style source. Saved source `qa/browser-comments/figma-upcoming.png` (348 × 36); implementation `upcoming-banner.jpg` (353 × 36); combined `upcoming-comparison.png` was opened and inspected.
+- Default-summary source is the information panel from `qa/nov6/figma-setup.png`; `qa/browser-comments/summary-comparison.png` combines its 364 × 56 crop with the 369 × 56 rendered summary. Text matches the requested daily/today default and permanent second sentence.
+- iPhone evidence: `large-total-1800.jpg`, `large-total-8000.jpg`, `details-fixed.jpg`, `reading-editor-fixed.jpg`, `home-no-scrollbar.jpg`, `default-reminder-screen.jpg` under `qa/browser-comments/`. Captures are 393 × 852, at 1:1 CSS screen geometry (392.997 × 851.989 CSS px). Browser viewport 1527 × 1418 CSS px, reported DPR 1.1; clip multiplied by DPR as in the preceding QA. Pixel evidence `pixel-large-total.jpg` is 427 × 952. The template's chrome and JPEG softness remain expected differences.
+- `qa/browser-comments/fixes-overview.jpg` combines the final large-value detail state and grouped editor for review. Future reminder starts November 13; the banner displays only 8:00 AM.
+
+## Findings resolved and visual checks
+- [P2, comments 1/6] Custom runtime scrollbar indicators were visible. App-scoped CSS hides them and native bars. Verified indicator display none while Home scrollTop reached 476 px and overflow remained auto. Scrolling and navigation are retained; no protected runtime file changed.
+- [P2, comment 2] Future dates made the upcoming message wrap. Formatter now preserves schedule selection but returns only the time. Verified future-start reminder reads Upcoming fluid intake reminder : 8:00 AM.
+- [P2, comment 3] Banner used the schedule bell. Replaced only this slot with exact source 9cf3a.svg, blue stroke intact, root 19.6667 × 18.8333, at the source .1667 px slot offsets in a 20 px wrapper. Source 8 px padding/gap, #ecf6fe background, 4 px radius and Work Sans 14/20 medium with zero tracking match the combined banner evidence.
+- [P2, comment 4] New reminders were finite by default, and selecting all weekdays produced a long list. Default now repeats daily starting today with no end date. Both fresh entry and a full reload show the exact default sentence. Advanced subset (Monday, Wednesday, Friday) updates the summary; a future start updates its date; all seven selected weekdays read daily. Editing saved settings retains them.
+- [P2, comment 5] Save Reading touched the helper. Grouped label, counter and helper at 8 px gaps, then a 12 px group-to-button gap. Rendered measurement 11.989 px (rounding from 12 CSS px); button margin 0. Final editor capture visibly separates the button.
+- [P2, comment 7] Large totals previously switched to two rows. Pill now stays flex/nowrap, 44 px high; hero gap reduces to 16 px and Today plus clock scale proportionally to 80%. At 1800oz, label/value centers match and clientWidth equals scrollWidth (225 px). 8000oz fits with no overflow on iPhone and Pixel. Volume remains 20/24.
+- [P2, comment 8] A maximum at the axis ceiling clipped its circle. Chart now reserves 5% value headroom (at least 8oz), extra edge padding, and clip:false. Captures at 1800 and 8000oz show complete topmost and endpoint circles; zero/low circles remain fully drawn.
+- All fixes were applied before the final comparisons/captures; no remaining actionable P0/P1/P2 finding. Scope changes are recorded in `final-scope.md`.
+
+## Required fidelity surfaces and validation
+- Fonts: existing bundled Work Sans retained, including exact upcoming 14/20 medium and proportional Today scaling. No font substitutions.
+- Spacing: original banner slot dimensions and gaps restored; reading fields 8 px and Save gap 12 px; totals remain 44 px high and single-line. No primary controls hidden on either device.
+- Colors: exact blue source SVG and banner tokens; existing teal/gray field states remain.
+- Assets: original local SVG downloaded from the fresh design context and checked nonempty; intrinsic dimensions measured in the browser. Other assets unchanged.
+- Copy: time-only upcoming reminder; exact default daily/today sentence; adaptive changed settings and persistent helper sentence retained. No unrelated copy changes.
+- Browser warning/error log empty. TypeScript, 28-file runtime integrity, production build and four Sites worker tests pass. Existing chunk-size advisory is unchanged.
+
+final result: passed
