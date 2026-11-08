@@ -49,7 +49,6 @@
 .home-progress-today{display:flex;align-items:center;gap:4px;font:500 20px/24px 'Work Sans',sans-serif;color:#6e7776;letter-spacing:-.5px}
 .home-progress-total strong{display:flex;align-items:center;gap:2px;color:#3b403e;font:500 24px/28px 'Work Sans',sans-serif;letter-spacing:-1px;white-space:nowrap}.home-progress-total strong>img{margin-right:2px}
 .home-progress-entry .helper{font:400 14px/16px 'Work Sans',sans-serif;color:#6e7776;letter-spacing:-.5px}
-.phone-device[data-platform=android] .bottom-sheet:has(.home-progress-fields) .sheet-content{padding-bottom:32px}
 
 /* New Final Scope — ounces are the display unit; glass counts remain editable. */
 .hero-info{gap:40px}.today-total{height:44px;min-width:0;gap:8px}.today-total>span{font-size:20px;line-height:24px}.today-total strong{font-size:18px;line-height:22px;letter-spacing:-.5px;gap:4px;color:#6e7776}.today-total[data-wide=true]{display:flex;min-height:44px;height:auto;gap:4px}.today-total[data-wide=true] strong{font-size:18px;line-height:22px}
@@ -126,8 +125,6 @@
 .medication-art>img.med-reference-photo{inset:auto;width:216.5px;height:279.354px;object-fit:fill;left:calc(50% - 88.5px);top:calc(50% - 139.427px)}.med-list-card .medication-art>img.med-reference-photo{left:-35px;top:-66.427px}
 .med-review-content>.med-notification-warning{margin-bottom:16px}.device-screen:has(.med-confirm-overlay) .status-bar,.device-screen:has(.med-dose-sheet) .status-bar{background:#999}
 .med-condition-more{flex:1;min-width:24px;align-self:stretch}
-/* Android already reserves its navigation area outside the app viewport. */
-.phone-device[data-platform=android] .setup-footer::after{display:none}
 .med-small-art{border-color:#0ac25a}.med-dose-art img:not([src$='.svg']){width:28px;height:28px}
 
 /* Shared 16px page gutter, applied once per outer content surface. */

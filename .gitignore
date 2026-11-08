@@ -6,3 +6,5 @@ reference/
 qa/*-full.jpg
 scripts/download-figma-assets.py
 scripts/home-assets.json
+
+.playwright-cli/

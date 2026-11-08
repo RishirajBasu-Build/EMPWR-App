@@ -103,21 +103,13 @@ export function useKeyboard() {
 export function useKeyboardInsets() {
   const keyboard = useKeyboard();
   const { device } = useMobileDevice();
-  const reservesAndroidNavigation = device.platform === "android" && !keyboard.visible;
 
   return {
     keyboardHeight: keyboard.height,
     keyboardFullHeight: keyboard.fullHeight,
     keyboardDragging: keyboard.isDragging,
-    bottomInset: reservesAndroidNavigation
-      ? 0
-      : device.platform === "android"
-        ? keyboard.height
-        : Math.max(device.geometry.safeArea.bottom, keyboard.height),
-    availableHeight:
-      device.geometry.screen.height -
-      keyboard.height -
-      (reservesAndroidNavigation ? device.geometry.safeArea.bottom : 0),
+    bottomInset: Math.max(device.geometry.safeArea.bottom, keyboard.height),
+    availableHeight: device.geometry.screen.height - keyboard.height,
     isKeyboardVisible: keyboard.visible,
   };
 }
@@ -292,29 +284,13 @@ export function KeyboardDock() {
     >
       <img
         className="keyboard-asset"
-        src={device.platform === "android" ? mobileAssets.androidKeyboard : mobileAssets.iphoneKeyboard}
+        src={mobileAssets.iphoneKeyboard}
         alt=""
         aria-hidden="true"
         draggable={false}
       />
       <div className="mobile-keyboard-keys" data-mode={numeric ? 'numbers' : 'letters'} role="group" aria-label={numeric ? 'Number keyboard' : 'Letter keyboard'}>
-        {device.platform === 'android' ? <>
-          {Array.from('1234567890').map((character,index)=>key(character, 1+index*10, 15.2, 8.5, 11.4, ()=>typeKey(character)))}
-          {numeric ? <>
-            <div className="android-numeric-mask" />
-            {[numberRows[1], "[]{}#%^*+="].map((row,rowIndex)=>Array.from(row).map((character,index)=>key(character,1+index*9.1,29.1+rowIndex*13.9,7.6,11.4,()=>typeKey(character),true)))}
-            {key('#+=',1,57,7.6,11.4,()=>setSymbols(!symbols),true)}
-            {key('.',30,57,12,11.4,()=>typeKey('.'),true)}
-            {key(',',45,57,12,11.4,()=>typeKey(','),true)}
-            {key('?',60,57,12,11.4,()=>typeKey('?'),true)}
-          </> : ['qwertyuiop[',"asdfghjkl;'",'zxcvbnm,.'].map((row,rowIndex)=>Array.from(row).map((character,index)=>key(shift?character.toUpperCase():character,(rowIndex===2?10.1:1)+index*9.1,29.1+rowIndex*13.9,7.6,11.4,()=>typeKey(shift?character.toUpperCase():character))))}
-          {!numeric && key('Shift',1,57,7.6,11.4,()=>setShift(!shift))}
-          {key('Backspace',91,57,8,11.4,()=>typeKey('Backspace'))}
-          {key(numeric?'ABC':'123',1,71,13,11.4,()=>setNumeric(!numeric),numeric)}
-          {key('Space',34,71,42,11.4,()=>typeKey(' '))}
-          {key('Done',86,71,13,11.4,()=>typeKey('Enter'))}
-          {key('Hide keyboard',7,91,8,8,()=>keyboard.hide())}
-        </> : <>
+        <>
         {numeric ? <>
           <div className="numeric-keyboard-mask" />
           {numberRows.map((row, rowIndex) => Array.from(row).map((character, index) => {
@@ -331,7 +307,7 @@ export function KeyboardDock() {
         {key(numeric ? 'ABC' : '123', 1.7, 65.7, 23, 12.5, () => { setNumeric(!numeric); setSymbols(false); }, numeric)}
         {key('Space', 26.2, 65.7, 47.5, 12.5, () => typeKey(' '))}
         {key('Done', 74.8, 65.7, 23.5, 12.5, () => typeKey('Enter'))}
-        </>}
+        </>
       </div>
     </motion.div>
   );

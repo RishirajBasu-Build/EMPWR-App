@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { KeyboardInput, useKeyboard } from "./Keyboard";
-import { useMobileDevice } from "./Device";
+import { KeyboardInput } from "./Keyboard";
 
 export function StatusBar() {
   const [now, setNow] = useState(() => new Date());
-  const { device } = useMobileDevice();
 
   useEffect(() => {
     const syncToMinute = window.setTimeout(() => {
@@ -24,31 +22,13 @@ export function StatusBar() {
         {formatStatusTime(now)}
       </span>
       <div className="status-indicators" aria-hidden="true">
-        <StatusIndicators platform={device.platform} />
+        <StatusIndicators />
       </div>
     </div>
   );
 }
 
 export function HomeIndicator() {
-  const { device } = useMobileDevice();
-  const keyboard = useKeyboard();
-
-  if (device.platform === "android") {
-    if (keyboard.visible) return null;
-
-    return (
-      <img
-        className="android-navigation-bar"
-        data-testid="android-navigation-bar"
-        src="/assets/android/navigation-bar.svg"
-        alt=""
-        aria-hidden="true"
-        draggable={false}
-      />
-    );
-  }
-
   return (
     <svg
       className="home-indicator-svg"
@@ -90,17 +70,13 @@ function formatStatusTime(date: Date) {
   return `${hours % 12 || 12}:${minutes}`;
 }
 
-function StatusIndicators({ platform }: { platform: "ios" | "android" }) {
+function StatusIndicators() {
   return (
     <img
       className="status-indicator-svg"
       data-testid="status-indicators"
-      data-platform={platform}
-      src={
-        platform === "android"
-          ? "/assets/status/status-icons.svg"
-          : "/assets/status/ios-status-icons.svg"
-      }
+      data-platform="ios"
+      src="/assets/status/ios-status-icons.svg"
       alt=""
       aria-hidden="true"
       draggable={false}

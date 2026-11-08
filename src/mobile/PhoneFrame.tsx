@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { DevicePicker, useMobileDevice } from "./Device";
+import { useMobileDevice } from "./Device";
 import { useMobileCursor } from "./MobileCursor";
 
 type ScreenPortalContextValue = {
@@ -72,7 +72,6 @@ export function PhoneFrame({ children }: PropsWithChildren) {
   return (
     <ScreenPortalContext.Provider value={contextValue}>
       <div className="phone-stage">
-        <DevicePicker />
         <div
           className="phone-scale-box"
           style={{
@@ -92,14 +91,7 @@ export function PhoneFrame({ children }: PropsWithChildren) {
               transform: `scale(${scale})`,
             }}
           >
-            <img
-              className="phone-bezel"
-              src={device.bezel}
-              alt=""
-              aria-hidden="true"
-              draggable={false}
-              style={{ zIndex: device.bezelLayer === "above-screen" ? 2 : 1 }}
-            />
+            <img className="phone-bezel" src="/assets/iphone/iphone-17-sage-front.png" alt="" aria-hidden="true" draggable={false} />
             <div
               ref={screenRef}
               className="device-screen"
@@ -116,24 +108,11 @@ export function PhoneFrame({ children }: PropsWithChildren) {
                   width: geometry.screen.width,
                   height: geometry.screen.height,
                   borderRadius: geometry.screen.radius,
-                  zIndex: device.bezelLayer === "above-screen" ? 1 : 2,
+                  zIndex: 1,
                 } as CSSProperties
               }
             >
               {children}
-              {device.camera ? (
-                <span
-                  className="device-camera"
-                  data-testid="device-camera"
-                  aria-hidden="true"
-                  style={{
-                    width: device.camera.size,
-                    height: device.camera.size,
-                    top: device.camera.top,
-                    left: `calc(50% - ${device.camera.size / 2}px)`,
-                  }}
-                />
-              ) : null}
               {mobileCursor.cursorElement}
             </div>
           </div>

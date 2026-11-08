@@ -15,8 +15,12 @@ Eight US fluid ounces per glass with synchronized ounce totals throughout. Home 
 - `npm run build`
 - `npm run test:sites`
 
-Uses the preserved Product Design mobile runtime, with iPhone / Pixel 10 previews and simulated mobile keyboard. App code is in `src/Prototype.tsx` and `src/prototype.css`. Original Figma images are bundled in `public/assets/figma`.
+Uses the preserved Product Design mobile runtime, with a static sage iPhone 17 frame and simulated mobile keyboard. App code is in `src/Prototype.tsx` and `src/prototype.css`. Original Figma images are bundled in `public/assets/figma`.
 
 This is an in-memory prototype. Refresh restarts the demo. No real notifications or external patient data are used.
 
 See `design-qa.md` for visual evidence and interaction checks.
+
+## November 8 device update
+
+The build offers only a static sage iPhone 17 frame around the interactive EMPWR app. Android and the 3D viewer have been removed. There are no view switches, rotation controls, 3D assets or Three.js dependencies. See public/assets/iphone/MODEL-SOURCE.md for frame provenance.
