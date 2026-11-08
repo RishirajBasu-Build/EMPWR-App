@@ -1,6 +1,6 @@
 export { BottomSheet } from "./BottomSheet";
 export { Carousel, type CarouselProps } from "./Carousel";
-export { DevicePicker, mobileDevices, useMobileDevice, type MobileDeviceId } from "./Device";
+export { mobileDevices, useMobileDevice, type MobileDeviceId } from "./Device";
 export { FlowStack, useFlow, type FlowControls, type FlowScreen } from "./FlowStack";
 export {
   KeyboardDock,
@@ -15,4 +15,4 @@ export { MobileRuntime } from "./MobileRuntime";
 export { PhoneFrame, useScreenPortal } from "./PhoneFrame";
 export { HomeIndicator, MobileTextField, StatusBar } from "./components";
 export { mobileAssets } from "./assets";
-export { iphoneGeometry, pixelGeometry, type IPhoneGeometry, type MobileDeviceGeometry } from "./geometry";
+export { iphoneGeometry, type IPhoneGeometry, type MobileDeviceGeometry } from "./geometry";

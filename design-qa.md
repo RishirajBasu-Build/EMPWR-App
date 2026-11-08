@@ -1,3 +1,58 @@
+# Static sage iPhone 17 — November 8, 2026
+
+final result: passed
+
+User requested removal of the 3D feature. The static sage iPhone 17 frame remains, with app content interactive. Removed the WebGL/Three.js viewer, source model file, view switches, rotation hint and related styles/dependencies.
+
+Source: qa/sage-iphone/front.png from the preceding release. Implementation: qa/sage-iphone/static-front.png, both 1400 × 1200 at CSS-pixel density. The same 511 × 968 frame and 400.934 × 874 display geometry are retained. The only intended visible change is removal of preview controls. Mobile evidence: qa/sage-iphone/static-mobile.png (390 × 844).
+
+Reviewed frame alignment, typography, spacing, colors, artwork and app copy; no actionable P0/P1/P2 findings. Existing app fonts, content and assets remain. The frame is the same transparent front render used by the preceding release.
+
+Browser checks passed: image decoded, 3D controls absent, zero requests for model/Three.js assets, no page errors, fluid count updated 5→6, keyboard opened/dismissed, Back returned Home, narrow viewport remained usable. Production build, runtime integrity and four Sites tests passed.
+
+Earlier release evidence below is historical.
+
+---
+
+# Sage iPhone 17 release QA — November 8, 2026
+
+final result: passed
+
+The requested scope is the device preview. EMPWR app content and records are unchanged. Android is absent from the presets, runtime paths and bundled device assets.
+
+Source truth: original Apple iPhone 17 USDZ, retained unchanged at public/assets/iphone/iphone-17.usdz; sage reference qa/sage-iphone/apple-sage-reference.jpg (724 × 540). Provenance is documented in public/assets/iphone/MODEL-SOURCE.md.
+
+Evidence: qa/sage-iphone/front.png and 3d-back.png (1400 × 1200 browser captures), mobile.png (390 × 844), keyboard.png, fallback.png, reminder-form.png. The device display is calibrated from the original model's display mesh: 400.934 × 874 CSS pixels at scale 1; the model canvas is 511 × 968 CSS pixels. Screenshots use CSS-pixel density. The new viewport intentionally follows iPhone 17 geometry instead of the former 393 × 852 preset.
+
+Full device and focused camera/finish review used qa/sage-iphone/comparison.png, which presents the source and rendered model together. The reference is a close frontal crop; the implementation crop is a back three-quarter view enlarged 1.75× for comparable device width. The model uses neutral studio lighting rather than Apple's baked promotional reflections. Original camera, side button and device geometry are retained.
+
+Comparison history:
+1. Initial render had an incorrect USD unit scale (P1); multiplied the source scale rather than replacing it. The resulting phone and live display align.
+2. First back-view check found remaining lavender texture surfaces and visible app content beneath the rotated phone (P1). Remapped the back and camera surfaces; made the inactive app layer opaque-hidden and inert during 3D exploration.
+3. Focused finish comparison found the body too grey (P2). Calibrated the sage material under the renderer's studio lighting and recaptured comparison.png. No actionable P0/P1/P2 findings remain.
+
+Fidelity surfaces:
+- Typography: EMPWR Work Sans/IBM Plex Mono/Inter assets, content and weights retained; preview controls use the existing system font.
+- Layout: source model geometry and display mesh establish the frame; content has the existing 16px gutter. At 390 × 844, the whole phone and both view controls remain visible without horizontal overflow.
+- Color: exterior is sage across the frame, camera surround and back glass. Source lenses and glass are retained. Studio-light reflections differ from the marketing photo, an expected rendering difference.
+- Assets: original USDZ meshes/textures, source status indicators and iOS keyboard; transparent fallback is rendered from the same model. No app content is rasterized into the fallback.
+- Content: app labels and data behavior are retained; preview names iPhone 17 · Sage with Use app / Explore 3D.
+
+Verified with user-authorized Playwright:
+- Drag rotates the actual model; switching to Use app restores the front view.
+- Fluid counter changed 5→6 and retained 6 through both view modes; shared total remained 48oz.
+- Keyboard opens correctly and app navigation/reminder setup stays usable.
+- Model-load failure displays the matching fallback and the app remains interactive.
+- Android elements: 0; Android public asset directory removed.
+- Clean production build navigation, view switching, fluid logging and reminder form produced no console errors or page errors. Development-only hot-refresh and intentionally aborted model-load diagnostics were excluded from the production check.
+- Build, runtime integrity, four Sites tests and 22 domain tests passed.
+
+Follow-up polish: lens highlights differ under the neutral studio environment. These are lighting differences in the original model, not missing geometry or interactions.
+
+---
+
+Historical app QA follows; the device dimensions and Android statements below describe earlier releases.
+
 # EMPWR Medication and Fluid Intake prototype — design QA
 
 final result: passed

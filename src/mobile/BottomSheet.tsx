@@ -67,10 +67,7 @@ export function BottomSheet({
 
   const sheetHeight = Math.round(device.geometry.screen.height * snap);
   const effectiveHeight = Math.max(260, sheetHeight - Math.min(keyboardHeight, 180));
-  const sheetBottom =
-    device.platform === "android"
-      ? Math.max(device.geometry.safeArea.bottom, keyboardHeight)
-      : keyboardHeight;
+  const sheetBottom = keyboardHeight;
   const portalContainer = screenRef.current ?? undefined;
 
   return (
